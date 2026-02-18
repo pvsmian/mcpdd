@@ -1,0 +1,99 @@
+[
+  {
+    "id": "microsoft-learn",
+    "name": "Microsoft Learn",
+    "url": "https://learn.microsoft.com/api/mcp",
+    "transport": "streamable-http",
+    "expectAuth": false,
+    "registryName": "com.microsoft/microsoft-learn-mcp",
+    "registryVersion": "1.0.0"
+  },
+  {
+    "id": "deepwiki",
+    "name": "DeepWiki",
+    "url": "https://mcp.deepwiki.com/mcp",
+    "transport": "streamable-http",
+    "expectAuth": false
+  },
+  {
+    "id": "context7",
+    "name": "Context7",
+    "url": "https://mcp.context7.com/mcp",
+    "transport": "streamable-http",
+    "expectAuth": false,
+    "registryName": "io.github.upstash/context7",
+    "registryVersion": "1.0.31"
+  },
+  {
+    "id": "exa",
+    "name": "Exa",
+    "url": "https://mcp.exa.ai/mcp",
+    "transport": "streamable-http",
+    "expectAuth": false,
+    "registryName": "ai.exa/exa",
+    "registryVersion": "3.1.3"
+  },
+  {
+    "id": "mcp-registry",
+    "name": "MCP Registry",
+    "url": "https://mcp-registry.shawndurrani.ai/sse",
+    "transport": "sse",
+    "expectAuth": false,
+    "registryName": "ai.shawndurrani/mcp-registry",
+    "registryVersion": "0.1.3"
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "url": "https://mcp.stripe.com/",
+    "transport": "streamable-http",
+    "expectAuth": true,
+    "registryName": "com.stripe/mcp",
+    "registryVersion": "0.2.4"
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "url": "https://mcp.notion.com/mcp",
+    "transport": "streamable-http",
+    "expectAuth": true,
+    "registryName": "com.notion/mcp",
+    "registryVersion": "1.0.1"
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "url": "https://mcp.figma.com/mcp",
+    "transport": "streamable-http",
+    "expectAuth": true,
+    "registryName": "com.figma.mcp/mcp",
+    "registryVersion": "1.0.3"
+  },
+  {
+    "id": "linear",
+    "name": "Linear",
+    "url": "https://mcp.linear.app/sse",
+    "transport": "sse",
+    "expectAuth": true,
+    "registryName": "app.linear/linear",
+    "registryVersion": "1.0.0"
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare",
+    "url": "https://bindings.mcp.cloudflare.com/sse",
+    "transport": "sse",
+    "expectAuth": true,
+    "registryName": "com.cloudflare.mcp/mcp",
+    "registryVersion": "1.0.0"
+  },
+  {
+    "id": "phonemcp",
+    "name": "PhoneMCP",
+    "url": "https://phone-mcp.com/sse",
+    "transport": "sse",
+    "expectAuth": true,
+    "registryName": "com.phone-mcp/phonemcp-mcp-server",
+    "registryVersion": "0.1.1"
+  }
+]

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mcpdd.org — MCP Downdetector</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 0;
+  }
+  a { color: #58a6ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  header {
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo { font-size: 20px; font-weight: 700; color: #f0f6fc; letter-spacing: -0.5px; cursor: pointer; }
+  .logo span { color: #58a6ff; }
+  .summary-text { font-size: 14px; font-weight: 600; }
+  header.summary-ok { background: #0f1d0f; }
+  header.summary-ok .summary-text { color: #3fb950; }
+  header.summary-warn { background: #1a1500; }
+  header.summary-warn .summary-text { color: #d29922; }
+  header.summary-bad { background: #1a0d0d; }
+  header.summary-bad .summary-text { color: #f85149; }
+  .meta-info { font-size: 12px; color: #8b949e; }
+
+  /* Toolbar */
+  .toolbar {
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 52px;
+    z-index: 99;
+  }
+  .toolbar-left { display: flex; align-items: center; gap: 10px; }
+  .toolbar-right { display: flex; align-items: center; gap: 10px; }
+  .nav-links { display: flex; gap: 12px; font-size: 13px; }
+  .nav-links a { color: #8b949e; }
+  .nav-links a:hover { color: #f0f6fc; text-decoration: none; }
+  .nav-links a.active { color: #58a6ff; }
+
+  /* Find box */
+  .find-box { display: flex; align-items: center; gap: 2px; }
+  .find-box input {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #f0f6fc;
+    font-size: 13px;
+    font-family: inherit;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: 180px;
+    outline: none;
+  }
+  .find-box input:focus { border-color: #58a6ff; }
+  .find-box input::placeholder { color: #484f58; }
+  .find-count { font-size: 11px; color: #8b949e; min-width: 35px; text-align: center; font-variant-numeric: tabular-nums; }
+  .find-nav-btn {
+    background: none; border: none; color: #8b949e; font-size: 16px;
+    width: 24px; height: 24px; cursor: pointer; display: flex;
+    align-items: center; justify-content: center; padding: 0;
+  }
+  .find-nav-btn:hover { color: #f0f6fc; }
+  .find-nav-btn:disabled { opacity: 0.25; cursor: default; }
+
+  /* Auth filter */
+  .auth-filter-btn {
+    background: #21262d; border: 1px solid #30363d; color: #8b949e;
+    font-size: 12px; font-family: inherit; padding: 4px 12px;
+    cursor: pointer; font-weight: 500; border-radius: 4px; min-width: 70px; text-align: center;
+  }
+  .auth-filter-btn:hover { background: #30363d; color: #c9d1d9; }
+  .auth-filter-btn.filter-active { background: #58a6ff; color: #0d1117; border-color: #58a6ff; font-weight: 600; }
+
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #30363d;
+    padding: 1px;
+  }
+
+  /* Provider card */
+  .provider-card {
+    background: #0d1117;
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 36px 1fr auto auto auto auto;
+    gap: 0 8px;
+    align-items: center;
+    height: 36px;
+    transition: opacity 0.15s;
+    cursor: default;
+  }
+  .provider-card.clickable { cursor: pointer; }
+  .provider-card:hover { background: #161b22; }
+  .provider-card.dimmed { opacity: 0.3; }
+  .provider-card.search-match { outline: 1px solid #58a6ff44; outline-offset: -1px; opacity: 1; }
+  .provider-card.search-current { outline: 2px solid #58a6ff; outline-offset: -2px; opacity: 1; background: #161b22; }
+  .provider-card.filtered-out { display: none; }
+
+  /* Health icons (overlapping dots) */
+  .health-icons { display: flex; align-items: center; justify-content: flex-start; min-width: 36px; }
+  .health-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 1.5px solid #0d1117;
+    flex-shrink: 0;
+  }
+  .health-dot + .health-dot { margin-left: -4px; }
+  .dot-green { background: #3fb950; box-shadow: 0 0 6px #3fb95066; }
+  .dot-yellow { background: #d29922; box-shadow: 0 0 6px #d2992266; }
+  .dot-orange { background: #db6d28; box-shadow: 0 0 6px #db6d2866; }
+  .dot-red { background: #f85149; box-shadow: 0 0 6px #f8514966; }
+  .dot-gray { background: #484f58; }
+
+  /* Name area */
+  .name-area { display: flex; align-items: center; gap: 5px; min-width: 0; }
+  .provider-name {
+    font-size: 13px; font-weight: 600; color: #f0f6fc;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20ch;
+  }
+  .remote-count { font-size: 11px; color: #8b949e; flex-shrink: 0; }
+  .info-link {
+    flex-shrink: 0; color: #8b949e; opacity: 0.4; text-decoration: none;
+    line-height: 0; display: inline-flex; align-items: center;
+  }
+  .info-link:hover { opacity: 0.9; color: #58a6ff; }
+  .sse-badge {
+    font-size: 9px; color: #d29922; border: 1px solid #d2992244;
+    padding: 0 4px; border-radius: 3px; flex-shrink: 0; line-height: 16px;
+  }
+
+  /* Stats cells */
+  .latency { font-size: 11px; font-variant-numeric: tabular-nums; text-align: right; min-width: 50px; }
+  .latency-fast { color: #3fb950; }
+  .latency-med { color: #d29922; }
+  .latency-slow { color: #db6d28; }
+  .latency-dead { color: #f85149; }
+  .uptime { font-size: 11px; font-variant-numeric: tabular-nums; color: #8b949e; text-align: right; min-width: 45px; }
+  .status-bar { display: flex; gap: 1px; align-items: center; }
+  .status-bar .tick { width: 3px; height: 16px; border-radius: 1px; flex-shrink: 0; }
+  .tick-green { background: #238636; }
+  .tick-yellow { background: #9e6a03; }
+  .tick-orange { background: #bd561d; }
+  .tick-red { background: #da3633; }
+  .tick-gray { background: #21262d; }
+
+  /* Detail view */
+  .detail-view { padding: 24px; max-width: 1200px; margin: 0 auto; }
+  .detail-header { margin-bottom: 24px; }
+  .detail-header h1 { font-size: 24px; color: #f0f6fc; margin-bottom: 4px; }
+  .detail-header .detail-meta { font-size: 13px; color: #8b949e; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .detail-back { font-size: 13px; margin-bottom: 12px; display: inline-block; }
+  .probe-btn {
+    background: #238636; border: 1px solid #2ea043; color: #f0f6fc;
+    font-size: 13px; font-family: inherit; padding: 6px 16px;
+    border-radius: 6px; cursor: pointer; font-weight: 500;
+  }
+  .probe-btn:hover { background: #2ea043; }
+  .probe-btn:disabled { opacity: 0.5; cursor: default; }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: #30363d;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .remote-row {
+    background: #0d1117;
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 10px 160px 55px 55px 45px 1fr;
+    gap: 0 8px;
+    align-items: center;
+    height: 36px;
+  }
+  .remote-row:hover { background: #161b22; }
+  .remote-name { font-size: 13px; font-weight: 600; color: #f0f6fc; display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .remote-name span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .remote-url { font-size: 10px; color: #484f58; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .auth-icon { font-size: 10px; flex-shrink: 0; opacity: 0.7; }
+  .tools { font-size: 11px; font-variant-numeric: tabular-nums; color: #8b949e; text-align: right; }
+
+  /* Changelog view */
+  .changelog-view { padding: 24px; max-width: 900px; margin: 0 auto; }
+  .changelog-view h1 { font-size: 24px; color: #f0f6fc; margin-bottom: 16px; }
+  .changelog-entry {
+    border-left: 2px solid #30363d;
+    padding: 12px 0 12px 16px;
+    margin-bottom: 4px;
+  }
+  .changelog-date { font-size: 13px; font-weight: 600; color: #f0f6fc; margin-bottom: 4px; }
+  .changelog-stat { font-size: 12px; color: #8b949e; margin-bottom: 2px; }
+  .changelog-added { color: #3fb950; }
+  .changelog-removed { color: #f85149; }
+  .changelog-changed { color: #d29922; }
+
+  /* Footer */
+  footer {
+    padding: 16px 24px;
+    font-size: 12px;
+    color: #8b949e;
+    border-top: 1px solid #30363d;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer a { color: #58a6ff; text-decoration: none; }
+
+  /* Mobile-hidden: cards that are healthy/unknown get hidden on mobile */
+  @media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .mobile-hidden { display: none; }
+    .provider-card {
+      grid-template-columns: 36px 1fr auto auto;
+    }
+    .provider-card .uptime,
+    .provider-card .status-bar { display: none; }
+    .find-box input { width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="navigate('/')"><span>mcpdd</span>.org</div>
+  <span class="summary-text" id="summary-text">Loading...</span>
+  <div class="meta-info" id="meta-info">Connecting...</div>
+</header>
+
+<div class="toolbar" id="toolbar">
+  <div class="toolbar-left">
+    <div class="nav-links">
+      <a href="/" onclick="navigate('/');return false" class="active" id="nav-dashboard">Dashboard</a>
+      <a href="/changelog" onclick="navigate('/changelog');return false" id="nav-changelog">Changelog</a>
+    </div>
+  </div>
+  <div class="toolbar-right">
+    <button class="auth-filter-btn" id="auth-filter-btn">All</button>
+    <div class="find-box">
+      <input type="text" id="find-input" placeholder="Find server..." />
+      <span class="find-count" id="find-count"></span>
+      <button class="find-nav-btn" id="find-prev" disabled>&#8593;</button>
+      <button class="find-nav-btn" id="find-next" disabled>&#8595;</button>
+    </div>
+  </div>
+</div>
+
+<main id="main-content"></main>
+
+<footer>
+  <span>Monitoring remote MCP servers from the <a href="https://github.com/modelcontextprotocol/registry">official registry</a>. Probing every 180s.</span>
+  <span><a href="/changelog" onclick="navigate('/changelog');return false">Changelog</a> &middot; <a href="https://github.com/mcpdd/mcpdd">Open source</a></span>
+</footer>
+
+<script>
+// === State ===
+let providers = [];
+let cardRefs = [];
+let lastCheckTime = null;
+let nextCheckTime = null;
+let currentView = 'dashboard'; // 'dashboard' | 'detail' | 'changelog'
+let currentDetailName = null;
+
+const main = document.getElementById("main-content");
+const summaryText = document.getElementById("summary-text");
+const metaInfo = document.getElementById("meta-info");
+const findInput = document.getElementById("find-input");
+const findCount = document.getElementById("find-count");
+const findPrev = document.getElementById("find-prev");
+const findNext = document.getElementById("find-next");
+const filterBtn = document.getElementById("auth-filter-btn");
+const toolbar = document.getElementById("toolbar");
+
+// === Constants ===
+const statusOrder = { down: 0, unhealthy: 1, degraded: 2, healthy: 3, unknown: 4 };
+const dotClasses = { green: "dot-green", yellow: "dot-yellow", orange: "dot-orange", red: "dot-red", gray: "dot-gray" };
+const tickColors = { healthy: "green", degraded: "yellow", unhealthy: "orange", down: "red", unknown: "gray" };
+
+function latencyClass(ms) {
+  if (ms === null) return "latency-dead";
+  if (ms < 200) return "latency-fast";
+  if (ms < 500) return "latency-med";
+  return "latency-slow";
+}
+
+function ellipsize(text, max) {
+  if (!text) return '';
+  return text.length > max ? text.substring(0, max - 1) + '\u2026' : text;
+}
+
+function registryUrl(provider) {
+  return `https://registry.modelcontextprotocol.io/v0.1/servers/${encodeURIComponent(provider.registryName)}/versions/${encodeURIComponent(provider.registryVersion || 'latest')}`;
+}
+
+// === Client-Side Router ===
+function navigate(path, push = true) {
+  if (push) history.pushState(null, '', path);
+  route(path);
+}
+
+function route(path) {
+  // Update nav links
+  document.getElementById('nav-dashboard').classList.toggle('active', path === '/');
+  document.getElementById('nav-changelog').classList.toggle('active', path === '/changelog');
+
+  if (path === '/changelog') {
+    currentView = 'changelog';
+    toolbar.querySelector('.toolbar-right').style.display = 'none';
+    renderChangelog();
+  } else if (path.startsWith('/server/')) {
+    currentView = 'detail';
+    currentDetailName = decodeURIComponent(path.replace('/server/', ''));
+    toolbar.querySelector('.toolbar-right').style.display = 'none';
+    renderDetail(currentDetailName);
+  } else {
+    currentView = 'dashboard';
+    toolbar.querySelector('.toolbar-right').style.display = '';
+    renderDashboard();
+  }
+}
+
+window.addEventListener('popstate', () => route(location.pathname));
+
+// === Dashboard View ===
+function renderDashboard() {
+  if (providers.length === 0) {
+    main.innerHTML = '<div class="grid" id="grid"></div>';
+    return;
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  grid.id = 'grid';
+  cardRefs = [];
+
+  // Sort: worst status first, then most recently probed
+  const sorted = [...providers].sort((a, b) => {
+    const sa = statusOrder[a.aggregateStatus] ?? 4;
+    const sb = statusOrder[b.aggregateStatus] ?? 4;
+    if (sa !== sb) return sa - sb;
+    return a.displayName.localeCompare(b.displayName);
+  });
+
+  sorted.forEach(p => {
+    const isMulti = p.remoteCount > 1;
+    const card = document.createElement('div');
+    card.className = 'provider-card' + (isMulti ? ' clickable' : '');
+
+    // Determine auth from remotes
+    const anyProtected = p.remotes.some(r => r.auth === 'protected');
+    card.dataset.auth = anyProtected ? 'protected' : 'open';
+
+    // Mobile: hide healthy/unknown
+    const isHealthy = p.aggregateStatus === 'healthy' || p.aggregateStatus === 'unknown';
+    if (isHealthy) card.classList.add('mobile-hidden');
+
+    // Health icons
+    const iconsHtml = p.healthIcons.map(c => `<div class="health-dot ${dotClasses[c] || 'dot-gray'}"></div>`).join('');
+
+    // Latency
+    const lat = p.worstLatencyMs;
+    const latText = lat !== null ? (lat + 'ms').padStart(6, '\u2007') : '\u2007\u2007 ---';
+
+    // Uptime
+    const uptimeText = p.uptimePercent !== null ? p.uptimePercent.toFixed(1) + '%' : '---';
+
+    // History ticks
+    const ticks = (p.history || []).map(h => tickColors[h.status] || 'gray');
+
+    card.innerHTML = `
+      <div class="health-icons">${iconsHtml}</div>
+      <div class="name-area">
+        <span class="provider-name" title="${escapeHtml(p.displayName)}">${escapeHtml(ellipsize(p.displayName, 20))}</span>
+        <a href="${registryUrl(p)}" target="_blank" rel="noopener" class="info-link" title="Registry entry" onclick="event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 1.5H2a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h8a.5.5 0 00.5-.5V7.5M7 1.5h3.5V5M6 6.5l5-5"/></svg></a>
+        ${isMulti ? `<span class="remote-count">(${p.remoteCount})</span>` : ''}
+        ${p.sseOnly ? '<span class="sse-badge">SSE</span>' : ''}
+      </div>
+      <span class="latency ${latencyClass(lat)}">${latText}</span>
+      <span class="uptime">${uptimeText}</span>
+      <div class="status-bar">${ticks.map(t => `<div class="tick tick-${t}"></div>`).join('')}</div>
+    `;
+
+    if (isMulti) {
+      card.addEventListener('click', () => navigate('/server/' + encodeURIComponent(p.registryName)));
+    }
+
+    grid.appendChild(card);
+    cardRefs.push({ provider: p, el: card });
+  });
+
+  main.innerHTML = '';
+  main.appendChild(grid);
+  updateSummary();
+  applyFilter(currentFilter);
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// === Detail View ===
+async function renderDetail(registryName) {
+  main.innerHTML = '<div class="detail-view"><p>Loading...</p></div>';
+
+  try {
+    const res = await fetch('/api/server/' + encodeURIComponent(registryName));
+    if (!res.ok) throw new Error('Not found');
+    const data = await res.json();
+
+    const iconsHtml = data.healthIcons.map(c => `<div class="health-dot ${dotClasses[c] || 'dot-gray'}"></div>`).join('');
+
+    let html = `<div class="detail-view">
+      <a class="detail-back" href="/" onclick="navigate('/');return false">&larr; Back to dashboard</a>
+      <div class="detail-header">
+        <h1>${escapeHtml(data.displayName)}</h1>
+        <div class="detail-meta">
+          <span>${data.remoteCount} remote${data.remoteCount !== 1 ? 's' : ''}</span>
+          <span>v${escapeHtml(data.registryVersion)}</span>
+          ${data.sseOnly ? '<span class="sse-badge">SSE only</span>' : ''}
+          <span>Status: ${data.aggregateStatus}</span>
+          <div class="health-icons" style="margin-left:4px">${iconsHtml}</div>
+          <button class="probe-btn" id="probe-now-btn">Probe Now</button>
+        </div>
+      </div>
+      <div class="detail-grid">`;
+
+    for (const r of data.remotes) {
+      const dotClass = dotClasses[tickColors[r.status]] || 'dot-gray';
+      const authIcon = r.auth === 'protected' ? '\uD83D\uDD12' : '';
+      const latText = r.latencyMs !== null ? (r.latencyMs + 'ms').padStart(6, '\u2007') : '\u2007\u2007 ---';
+      const uptimeText = r.uptimePercent !== null ? r.uptimePercent.toFixed(1) + '%' : '---';
+      const ticks = (r.history || []).map(h => tickColors[h.status] || 'gray');
+
+      html += `<div class="remote-row">
+        <div class="health-dot ${dotClass}"></div>
+        <div class="remote-name">
+          <span title="${escapeHtml(r.url)}">${escapeHtml(r.remoteName)}</span>
+          <span class="auth-icon">${authIcon}</span>
+        </div>
+        <span class="latency ${latencyClass(r.latencyMs)}">${latText}</span>
+        <span class="tools">${r.toolCount != null ? r.toolCount + ' tools' : ''}</span>
+        <span class="uptime">${uptimeText}</span>
+        <div class="status-bar">${ticks.map(t => `<div class="tick tick-${t}"></div>`).join('')}</div>
+      </div>`;
+    }
+
+    html += '</div></div>';
+    main.innerHTML = html;
+
+    // Probe Now button
+    document.getElementById('probe-now-btn').addEventListener('click', async function() {
+      this.disabled = true;
+      this.textContent = 'Probing...';
+      try {
+        await fetch('/api/server/' + encodeURIComponent(registryName) + '/probe', { method: 'POST' });
+        await renderDetail(registryName);
+      } catch (err) {
+        this.textContent = 'Error';
+        setTimeout(() => { this.disabled = false; this.textContent = 'Probe Now'; }, 2000);
+      }
+    });
+  } catch (err) {
+    main.innerHTML = `<div class="detail-view"><p>Error loading provider: ${escapeHtml(err.message)}</p><a href="/" onclick="navigate('/');return false">&larr; Back</a></div>`;
+  }
+}
+
+// === Changelog View ===
+async function renderChangelog() {
+  main.innerHTML = '<div class="changelog-view"><p>Loading...</p></div>';
+
+  try {
+    const res = await fetch('/api/changelog');
+    const data = await res.json();
+
+    if (!data || data.length === 0) {
+      main.innerHTML = '<div class="changelog-view"><h1>Changelog</h1><p style="color:#8b949e">No changelog entries yet. Run ingestion to generate.</p></div>';
+      return;
+    }
+
+    let html = '<div class="changelog-view"><h1>Changelog</h1>';
+    for (const entry of data) {
+      const date = new Date(entry.timestamp).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+      html += `<div class="changelog-entry">
+        <div class="changelog-date">${escapeHtml(date)}</div>
+        <div class="changelog-stat">${entry.providerCount} total providers</div>`;
+
+      if (entry.added.length > 0) {
+        html += `<div class="changelog-stat changelog-added">+${entry.added.length} added: ${entry.added.slice(0, 5).map(a => escapeHtml(a.displayName || a.registryName)).join(', ')}${entry.added.length > 5 ? '...' : ''}</div>`;
+      }
+      if (entry.removed.length > 0) {
+        html += `<div class="changelog-stat changelog-removed">-${entry.removed.length} removed: ${entry.removed.slice(0, 5).map(r => escapeHtml(r.displayName || r.registryName)).join(', ')}${entry.removed.length > 5 ? '...' : ''}</div>`;
+      }
+      if (entry.changed.length > 0) {
+        html += `<div class="changelog-stat changelog-changed">~${entry.changed.length} changed</div>`;
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+    main.innerHTML = html;
+  } catch (err) {
+    main.innerHTML = '<div class="changelog-view"><h1>Changelog</h1><p>Error loading changelog.</p></div>';
+  }
+}
+
+// === Data Fetching ===
+let metaInterval = null;
+
+async function fetchStatus() {
+  try {
+    const res = await fetch('/api/status');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    lastCheckTime = data.lastCheck ? new Date(data.lastCheck) : null;
+    nextCheckTime = data.nextCheck ? new Date(data.nextCheck) : null;
+    providers = data.providers || [];
+
+    if (currentView === 'dashboard') {
+      renderDashboard();
+    }
+    updateMetaInfo();
+
+    if (!metaInterval) {
+      metaInterval = setInterval(updateMetaInfo, 1000);
+    }
+  } catch (err) {
+    console.error('Failed to fetch status:', err);
+  }
+}
+
+function updateMetaInfo() {
+  if (!lastCheckTime || !nextCheckTime) {
+    metaInfo.textContent = 'Waiting for first probe...';
+    return;
+  }
+  const now = Date.now();
+  const ago = Math.max(0, Math.round((now - lastCheckTime.getTime()) / 1000));
+  const nextIn = Math.max(0, Math.round((nextCheckTime.getTime() - now) / 1000));
+  metaInfo.textContent = `Last: ${ago}s ago \u00B7 Next: ${nextIn}s \u00B7 ${providers.length} providers`;
+}
+
+// === Summary ===
+function updateSummary() {
+  const visible = cardRefs.filter(({ el }) => !el.classList.contains('filtered-out'));
+  const counts = { down: 0, degraded: 0, unhealthy: 0, healthy: 0, unknown: 0 };
+  visible.forEach(({ provider }) => { counts[provider.aggregateStatus] = (counts[provider.aggregateStatus] || 0) + 1; });
+
+  const bad = counts.down + counts.unhealthy + counts.degraded;
+  if (bad === 0) {
+    summaryText.textContent = `All ${visible.length} servers healthy`;
+  } else {
+    const parts = [];
+    if (counts.down > 0) parts.push(`${counts.down} down`);
+    if (counts.unhealthy > 0) parts.push(`${counts.unhealthy} unhealthy`);
+    if (counts.degraded > 0) parts.push(`${counts.degraded} degraded`);
+    parts.push(`${counts.healthy} healthy`);
+    summaryText.textContent = parts.join(' \u00B7 ');
+  }
+
+  const hdr = document.querySelector('header');
+  hdr.classList.remove('summary-ok', 'summary-warn', 'summary-bad');
+  if (counts.down > 0) hdr.classList.add('summary-bad');
+  else if (counts.degraded > 0 || counts.unhealthy > 0) hdr.classList.add('summary-warn');
+  else hdr.classList.add('summary-ok');
+}
+
+// === Auth Filter ===
+let currentFilter = 'all';
+const filterCycle = ['all', 'open', 'protected'];
+const filterLabels = { all: 'All', open: 'Open', protected: 'Auth' };
+
+function applyFilter(filter) {
+  currentFilter = filter;
+  filterBtn.textContent = filterLabels[filter];
+  filterBtn.classList.toggle('filter-active', filter !== 'all');
+  cardRefs.forEach(({ provider, el }) => {
+    const anyProtected = provider.remotes.some(r => r.auth === 'protected');
+    const auth = anyProtected ? 'protected' : 'open';
+    if (filter === 'all' || auth === filter) {
+      el.classList.remove('filtered-out');
+    } else {
+      el.classList.add('filtered-out');
+    }
+  });
+  updateSummary();
+  applySearch();
+}
+
+filterBtn.addEventListener('click', () => {
+  const nextIdx = (filterCycle.indexOf(currentFilter) + 1) % filterCycle.length;
+  applyFilter(filterCycle[nextIdx]);
+});
+
+// === Search ===
+let matches = [];
+let matchIndex = -1;
+
+function applySearch() {
+  const query = findInput.value.trim().toLowerCase();
+  cardRefs.forEach(({ el }) => el.classList.remove('dimmed', 'search-match', 'search-current'));
+  matches = [];
+  matchIndex = -1;
+
+  if (query.length < 2) {
+    findCount.textContent = '';
+    findPrev.disabled = true;
+    findNext.disabled = true;
+    return;
+  }
+
+  cardRefs.forEach(({ provider, el }) => {
+    if (el.classList.contains('filtered-out')) return;
+    if (provider.displayName.toLowerCase().includes(query) || provider.registryName.toLowerCase().includes(query)) {
+      matches.push(el);
+    }
+  });
+
+  if (matches.length === 0) {
+    findCount.textContent = '0/0';
+    findPrev.disabled = true;
+    findNext.disabled = true;
+    cardRefs.forEach(({ el }) => { if (!el.classList.contains('filtered-out')) el.classList.add('dimmed'); });
+    return;
+  }
+
+  cardRefs.forEach(({ el }) => {
+    if (el.classList.contains('filtered-out')) return;
+    if (matches.includes(el)) el.classList.add('search-match');
+    else el.classList.add('dimmed');
+  });
+
+  matchIndex = 0;
+  updateMatchNav();
+}
+
+function updateMatchNav() {
+  matches.forEach(el => el.classList.remove('search-current'));
+  if (matches.length === 0 || matchIndex < 0) return;
+
+  const current = matches[matchIndex];
+  current.classList.remove('search-match');
+  current.classList.add('search-current');
+  findCount.textContent = `${matchIndex + 1}/${matches.length}`;
+  findPrev.disabled = matches.length <= 1;
+  findNext.disabled = matches.length <= 1;
+
+  const headerH = document.querySelector('header').offsetHeight;
+  const toolbarH = toolbar.offsetHeight;
+  const top = current.getBoundingClientRect().top + window.scrollY - headerH - toolbarH - 8;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+findInput.addEventListener('input', applySearch);
+findNext.addEventListener('click', () => { if (matches.length) { matchIndex = (matchIndex + 1) % matches.length; updateMatchNav(); } });
+findPrev.addEventListener('click', () => { if (matches.length) { matchIndex = (matchIndex - 1 + matches.length) % matches.length; updateMatchNav(); } });
+findInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') { e.preventDefault(); if (e.shiftKey) findPrev.click(); else findNext.click(); }
+  else if (e.key === 'Escape') { findInput.value = ''; applySearch(); findInput.blur(); }
+});
+
+// === Init ===
+fetchStatus();
+setInterval(fetchStatus, 15000);
+route(location.pathname);
+</script>
+</body>
+</html>
