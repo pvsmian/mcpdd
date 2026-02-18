@@ -569,14 +569,14 @@ function updateSummary() {
 
   const bad = counts.down + counts.unhealthy + counts.degraded;
   if (bad === 0) {
-    summaryText.textContent = `All ${visible.length} servers healthy`;
+    summaryText.innerHTML = `All ${visible.length} servers healthy`;
   } else {
     const parts = [];
-    if (counts.down > 0) parts.push(`${counts.down} down`);
-    if (counts.unhealthy > 0) parts.push(`${counts.unhealthy} unhealthy`);
-    if (counts.degraded > 0) parts.push(`${counts.degraded} degraded`);
-    parts.push(`${counts.healthy} healthy`);
-    summaryText.textContent = parts.join(' \u00B7 ');
+    if (counts.down > 0) parts.push(`<span style="color:#f85149">${counts.down} down</span>`);
+    if (counts.unhealthy > 0) parts.push(`<span style="color:#db6d28">${counts.unhealthy} unhealthy</span>`);
+    if (counts.degraded > 0) parts.push(`<span style="color:#d29922">${counts.degraded} degraded</span>`);
+    parts.push(`<span style="color:#3fb950">${counts.healthy} healthy</span>`);
+    summaryText.innerHTML = parts.join(' <span style="color:#484f58">\u00B7</span> ');
   }
 
   const hdr = document.querySelector('header');

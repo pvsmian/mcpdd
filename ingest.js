@@ -91,6 +91,7 @@ function processServers(rawServers) {
   const providers = [];
   let skippedNoRemotes = 0;
   let skippedSmithery = 0;
+  let skippedJunk = 0;
   let skippedBadUrl = 0;
   let dedupedTransports = 0;
 
@@ -102,6 +103,12 @@ function processServers(rawServers) {
     // Skip Smithery proxies
     if (name.startsWith('ai.smithery')) {
       skippedSmithery++;
+      continue;
+    }
+
+    // Skip junk/test/template servers
+    if (isJunkServer(name, server.title, server.description)) {
+      skippedJunk++;
       continue;
     }
 
@@ -155,6 +162,7 @@ function processServers(rawServers) {
 
   console.log(`\n  Filter results:`);
   console.log(`    Smithery skipped: ${skippedSmithery}`);
+  console.log(`    Junk/test skipped: ${skippedJunk}`);
   console.log(`    No remotes (stdio-only): ${skippedNoRemotes}`);
   console.log(`    Bad URLs filtered: ${skippedBadUrl}`);
   console.log(`    Dual-transport deduped: ${dedupedTransports}`);
@@ -175,6 +183,63 @@ function isBadUrl(url) {
   } catch {
     return true;
   }
+  return false;
+}
+
+// --- Junk/test server detection ---
+
+/** Entire namespaces that are test/hosting platforms */
+const JUNK_NAMESPACES = [
+  'live.alpic',       // Alpic hosting platform — templates and test deployments
+  'tech.skybridge',   // Skybridge example/demo apps
+];
+
+/** Display name patterns that indicate non-serious servers */
+const JUNK_DISPLAY_PATTERNS = [
+  /^my mcp serv/i,
+  /^template/i,
+  /^test\s*$/i,
+  /^test server/i,
+  /^demo server/i,
+  /^example/i,
+  /\bexample\b.*\bapp\b/i,
+  /^hello world/i,
+  /^hey world/i,
+  /^second server/i,
+  /\bgreat server\b/i,
+  /^\(wip\)/i,
+];
+
+/** Description patterns that indicate non-serious servers */
+const JUNK_DESC_PATTERNS = [
+  /^(?:a )?demo (?:server )?(?:entry )?for (?:local )?testing/i,
+  /^(?:a )?test (?:mcp )?server/i,
+  /^template (?:mcp )?server/i,
+];
+
+function isJunkServer(registryName, title, description) {
+  // Block entire namespaces
+  for (const ns of JUNK_NAMESPACES) {
+    if (registryName.startsWith(ns)) return true;
+  }
+
+  // Check title against junk patterns
+  const t = (title || '').trim();
+  for (const re of JUNK_DISPLAY_PATTERNS) {
+    if (re.test(t)) return true;
+  }
+
+  // Check description against junk patterns
+  const d = (description || '').trim();
+  for (const re of JUNK_DESC_PATTERNS) {
+    if (re.test(d)) return true;
+  }
+
+  // Registry name patterns for obvious test entries
+  const slug = registryName.split('/')[1] || '';
+  if (/^(test|demo|example|sample)-?mcp/.test(slug)) return true;
+  if (/^mcp-?(test|demo|example|sample)$/.test(slug)) return true;
+
   return false;
 }
 
