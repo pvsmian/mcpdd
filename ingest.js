@@ -26,6 +26,67 @@ const MAX_AGE_DAYS = 90;
 const DRY_RUN = process.argv.includes('--dry-run');
 const FROM_CACHE = process.argv.includes('--from-cache');
 
+/**
+ * Run ingestion programmatically.
+ * @param {Object} [opts]
+ * @param {boolean} [opts.fromCache] - Re-process from local cache (no network)
+ * @param {boolean} [opts.dryRun] - Don't write files
+ * @returns {Promise<{providerCount: number, added: number, removed: number, changed: number} | null>}
+ */
+export async function runIngest(opts = {}) {
+  const fromCache = opts.fromCache ?? false;
+  const dryRun = opts.dryRun ?? false;
+
+  let rawServers;
+
+  if (fromCache) {
+    if (!existsSync(RAW_CACHE_FILE)) return null;
+    rawServers = JSON.parse(readFileSync(RAW_CACHE_FILE, 'utf-8'));
+  } else {
+    rawServers = await fetchAllServers();
+  }
+
+  const providers = processServers(rawServers);
+  providers.sort((a, b) => a.registryName.localeCompare(b.registryName));
+
+  if (dryRun) return { providerCount: providers.length, added: 0, removed: 0, changed: 0 };
+
+  // Save raw cache
+  if (!fromCache) {
+    mkdirSync(DATA_DIR, { recursive: true });
+    writeFileSync(RAW_CACHE_FILE, JSON.stringify(rawServers));
+  }
+
+  // Load previous for changelog
+  let oldProviders = [];
+  if (existsSync(SERVERS_FILE)) {
+    try { oldProviders = JSON.parse(readFileSync(SERVERS_FILE, 'utf-8')); } catch { /* first run */ }
+  }
+
+  // Write servers.json
+  mkdirSync(DATA_DIR, { recursive: true });
+  writeFileSync(SERVERS_FILE, JSON.stringify(providers, null, 2));
+
+  // Compute and append changelog
+  const changeEntry = computeChangelog(oldProviders, providers);
+  if (changeEntry) {
+    let changelog = [];
+    if (existsSync(CHANGELOG_FILE)) {
+      try { changelog = JSON.parse(readFileSync(CHANGELOG_FILE, 'utf-8')); } catch { /* fresh */ }
+    }
+    changelog.unshift(changeEntry);
+    if (changelog.length > 90) changelog = changelog.slice(0, 90);
+    writeFileSync(CHANGELOG_FILE, JSON.stringify(changelog, null, 2));
+  }
+
+  return {
+    providerCount: providers.length,
+    added: changeEntry?.added.length ?? 0,
+    removed: changeEntry?.removed.length ?? 0,
+    changed: changeEntry?.changed.length ?? 0,
+  };
+}
+
 // --- Fetch all pages from registry ---
 async function fetchAllServers() {
   const allServers = [];
@@ -585,7 +646,11 @@ async function fetchWithRetry(url, retries) {
   }
 }
 
-main().catch(err => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+// Run as CLI script
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
+if (isMain) {
+  main().catch(err => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}

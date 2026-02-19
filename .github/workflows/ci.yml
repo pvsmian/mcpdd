@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Start server and healthcheck
+        run: |
+          node server.js &
+          SERVER_PID=$!
+          sleep 5
+          curl -sf http://localhost:3000/ > /dev/null
+          curl -sf http://localhost:3000/api/status | node -e "
+            const data = JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));
+            if (!Array.isArray(data.providers)) { process.exit(1); }
+            console.log('OK: ' + data.providers.length + ' providers');
+          "
+          kill $SERVER_PID

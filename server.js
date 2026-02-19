@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { probeServer } from './prober.js';
+import { runIngest } from './ingest.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,6 +11,7 @@ const __dirname = dirname(__filename);
 // --- Configuration ---
 const PORT = process.env.PORT || 3000;
 const PROBE_INTERVAL_MS = parseInt(process.env.PROBE_INTERVAL_MS || '180000');
+const INGEST_INTERVAL_MS = parseInt(process.env.INGEST_INTERVAL_MS || '86400000');
 const PERSIST_INTERVAL_MS = 5 * 60 * 1000;
 const HISTORY_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const MAX_CONCURRENT_PROBES = 50;
@@ -352,6 +354,21 @@ function buildStatusResponse() {
   };
 }
 
+// --- Auto-ingest ---
+async function doIngest() {
+  console.log(`\n--- Ingest starting at ${new Date().toISOString()} ---`);
+  try {
+    const result = await runIngest();
+    if (result) {
+      console.log(`--- Ingest complete: ${result.providerCount} providers (+${result.added} -${result.removed} ~${result.changed}) ---`);
+    } else {
+      console.log('--- Ingest: no result (cache missing?) ---');
+    }
+  } catch (err) {
+    console.error(`--- Ingest failed: ${err.message} ---`);
+  }
+}
+
 // --- Express app ---
 const app = express();
 app.use(express.static(join(__dirname, 'public')));
@@ -432,6 +449,15 @@ app.listen(PORT, () => {
   probeAll();
   setInterval(probeAll, PROBE_INTERVAL_MS);
   setInterval(persistHistory, PERSIST_INTERVAL_MS);
+
+  // Auto-ingest from MCP Registry
+  if (INGEST_INTERVAL_MS > 0) {
+    console.log(`Auto-ingest enabled: every ${INGEST_INTERVAL_MS / 1000}s (first run in 60s)`);
+    setTimeout(async () => {
+      await doIngest();
+      setInterval(doIngest, INGEST_INTERVAL_MS);
+    }, 60000);
+  }
 });
 
 // Graceful shutdown
