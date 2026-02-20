@@ -10,11 +10,11 @@ const __dirname = dirname(__filename);
 
 // --- Configuration ---
 const PORT = process.env.PORT || 3000;
-const PROBE_INTERVAL_MS = parseInt(process.env.PROBE_INTERVAL_MS || '180000');
+const PROBE_INTERVAL_MS = parseInt(process.env.PROBE_INTERVAL_MS || '300000');
 const INGEST_INTERVAL_MS = parseInt(process.env.INGEST_INTERVAL_MS || '86400000');
 const PERSIST_INTERVAL_MS = 5 * 60 * 1000;
 const HISTORY_MAX_AGE_MS = 24 * 60 * 60 * 1000;
-const MAX_CONCURRENT_PROBES = 50;
+const MAX_CONCURRENT_PROBES = parseInt(process.env.MAX_CONCURRENT_PROBES || '15');
 const DATA_DIR = join(__dirname, 'data');
 const HISTORY_FILE = join(DATA_DIR, 'history.json');
 
@@ -117,13 +117,20 @@ function shuffle(arr) {
 }
 
 // --- Probe all providers ---
+let probeStartedAt = null;
+let skipCount = 0;
+
 async function probeAll() {
   if (probeInProgress) {
-    console.log('Probe already in progress, skipping');
+    skipCount++;
+    const overrunSec = probeStartedAt ? Math.round((Date.now() - probeStartedAt) / 1000) : '?';
+    console.log(`Probe already in progress (running ${overrunSec}s), skipping (${skipCount} consecutive skips)`);
     return;
   }
   probeInProgress = true;
-  const startTime = Date.now();
+  skipCount = 0;
+  probeStartedAt = Date.now();
+  const startTime = probeStartedAt;
   console.log(`\n--- Probe cycle starting at ${new Date().toISOString()} ---`);
 
   const cutoff = Date.now() - HISTORY_MAX_AGE_MS;
@@ -146,10 +153,13 @@ async function probeAll() {
   lastCheckTime = new Date().toISOString();
   nextCheckTime = new Date(Date.now() + PROBE_INTERVAL_MS).toISOString();
   probeInProgress = false;
+  probeStartedAt = null;
 
   const elapsed = Date.now() - startTime;
   const totalRemotes = providers.reduce((s, p) => s + p.remotes.length, 0);
-  console.log(`--- Probe cycle complete in ${elapsed}ms (${providers.length} providers, ${totalRemotes} remotes) ---`);
+  const mem = process.memoryUsage();
+  console.log(`--- Probe cycle complete in ${(elapsed / 1000).toFixed(1)}s (${providers.length} providers, ${totalRemotes} remotes) ---`);
+  console.log(`    Memory: rss=${Math.round(mem.rss / 1048576)}MB heap=${Math.round(mem.heapUsed / 1048576)}/${Math.round(mem.heapTotal / 1048576)}MB`);
 }
 
 async function probeRemote(provider, remote) {

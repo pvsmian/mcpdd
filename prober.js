@@ -100,10 +100,13 @@ async function doProbe(serverConfig) {
     // Classify the error from the connect/initialize attempt
     return classifyConnectError(err, serverConfig);
   } finally {
-    // Clean up
+    // Clean up with a timeout to prevent zombie connections
     try {
-      if (client) await client.close();
-      else if (transport) await transport.close();
+      const closePromise = client ? client.close() : (transport ? transport.close() : Promise.resolve());
+      await Promise.race([
+        closePromise,
+        new Promise(resolve => setTimeout(resolve, 3000)),
+      ]);
     } catch (_) {
       // ignore cleanup errors
     }
