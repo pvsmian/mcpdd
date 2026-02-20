@@ -27,7 +27,7 @@
     top: 0;
     z-index: 100;
   }
-  .logo { font-size: 20px; font-weight: 700; color: #f0f6fc; letter-spacing: -0.5px; cursor: pointer; }
+  .logo { font-size: 20px; font-weight: 700; color: #f0f6fc; letter-spacing: -0.5px; cursor: pointer; white-space: nowrap; }
   .logo span { color: #58a6ff; }
   .summary-text { font-size: 14px; font-weight: 600; }
   header.summary-ok { background: #0f1d0f; }
@@ -36,7 +36,7 @@
   header.summary-warn .summary-text { color: #d29922; }
   header.summary-bad { background: #1a0d0d; }
   header.summary-bad .summary-text { color: #f85149; }
-  .meta-info { font-size: 12px; color: #8b949e; }
+  .meta-info { font-size: 12px; color: #8b949e; white-space: nowrap; }
 
   /* Toolbar */
   .toolbar {
@@ -228,8 +228,18 @@
   }
   footer a { color: #58a6ff; text-decoration: none; }
 
-  /* Mobile-hidden: cards that are healthy/unknown get hidden on mobile */
+  /* Mobile */
   @media (max-width: 768px) {
+    header {
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      padding: 10px 16px;
+      position: static;
+    }
+    .logo { font-size: 18px; }
+    .meta-info { font-size: 11px; }
+    .summary-text { font-size: 13px; width: 100%; order: 3; }
+    .toolbar { top: 0; }
     .grid { grid-template-columns: 1fr; }
     .mobile-hidden { display: none; }
     .provider-card {
@@ -237,6 +247,7 @@
     }
     .provider-card .uptime,
     .provider-card .status-bar { display: none; }
+    .toolbar { padding: 8px 16px; }
     .find-box input { width: 120px; }
   }
 </style>
