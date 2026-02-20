@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: space-between;
     position: sticky;
-    top: 52px;
+    top: 0;
     z-index: 99;
   }
   .toolbar-left { display: flex; align-items: center; gap: 10px; }
@@ -234,12 +234,10 @@
       flex-wrap: wrap;
       gap: 4px 12px;
       padding: 10px 16px;
-      position: static;
     }
     .logo { font-size: 18px; }
     .meta-info { font-size: 11px; }
     .summary-text { font-size: 13px; width: 100%; order: 3; }
-    .toolbar { top: 0; }
     .grid { grid-template-columns: 1fr; }
     .mobile-hidden { display: none; }
     .provider-card {
@@ -303,6 +301,12 @@ const findPrev = document.getElementById("find-prev");
 const findNext = document.getElementById("find-next");
 const filterBtn = document.getElementById("auth-filter-btn");
 const toolbar = document.getElementById("toolbar");
+const headerEl = document.querySelector("header");
+
+// Keep toolbar sticky below header regardless of header height
+function syncToolbarTop() { toolbar.style.top = headerEl.offsetHeight + 'px'; }
+syncToolbarTop();
+new ResizeObserver(syncToolbarTop).observe(headerEl);
 
 // === Constants ===
 const statusOrder = { down: 0, unhealthy: 1, degraded: 2, healthy: 3, unknown: 4 };
