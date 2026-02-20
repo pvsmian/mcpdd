@@ -105,6 +105,21 @@
     ]
   },
   {
+    "registryName": "ai.com.mcp/linkedin",
+    "registryVersion": "1.0.0+0.7.1",
+    "publishedAt": "2026-02-19T15:17:12.346134Z",
+    "displayName": "LinkedIn MCP Server",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://linkedin.run.mcp.com.ai/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "ai.com.mcp/openai-tools",
     "registryVersion": "0.6.0",
     "publishedAt": "2026-01-22T02:35:00.021804Z",
@@ -158,6 +173,21 @@
     "remotes": [
       {
         "url": "https://skills-sh.run.mcp.com.ai/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "ai.com.mcp/strava",
+    "registryVersion": "3.0.0+0.7.1",
+    "publishedAt": "2026-02-19T16:39:20.668626Z",
+    "displayName": "HAPI Strava MCP Server",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://strava.run.mcp.com.ai/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -1159,8 +1189,8 @@
   },
   {
     "registryName": "co.pipeboard/meta-ads-mcp",
-    "registryVersion": "1.0.40",
-    "publishedAt": "2026-02-18T23:57:39.31323Z",
+    "registryVersion": "1.0.43",
+    "publishedAt": "2026-02-19T22:39:23.187784Z",
     "displayName": "Pipeboard Meta ads",
     "sseOnly": false,
     "remotes": [
@@ -1495,8 +1525,8 @@
   },
   {
     "registryName": "com.civic/nexus",
-    "registryVersion": "0.1.98",
-    "publishedAt": "2026-02-18T10:42:57.326142Z",
+    "registryVersion": "0.1.99",
+    "publishedAt": "2026-02-19T11:02:59.352691Z",
     "displayName": "Civic Nexus",
     "sseOnly": false,
     "remotes": [
@@ -2055,6 +2085,21 @@
     ]
   },
   {
+    "registryName": "com.gleanmark/trademark-search",
+    "registryVersion": "1.1.0",
+    "publishedAt": "2026-02-19T16:31:31.548367Z",
+    "displayName": "GleanMark Trademark Search",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://gleanmark.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.gojinko.mcp/jinko",
     "registryVersion": "0.0.1",
     "publishedAt": "2025-12-05T09:28:09.824211Z",
@@ -2290,8 +2335,8 @@
   },
   {
     "registryName": "com.linkbreakers/mcp",
-    "registryVersion": "1.18.8",
-    "publishedAt": "2026-02-18T09:06:03.595986Z",
+    "registryVersion": "1.20.2",
+    "publishedAt": "2026-02-20T02:30:36.282057Z",
     "displayName": "Linkbreakers MCP",
     "sseOnly": false,
     "remotes": [
@@ -3273,6 +3318,21 @@
     ]
   },
   {
+    "registryName": "com.traderwai/mcp-server",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-02-19T21:04:06.32211Z",
+    "displayName": "TraderWai",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.traderwai.com/",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.unifiedoffer/mcp-server",
     "registryVersion": "2.0.2",
     "publishedAt": "2025-10-15T08:37:56.540755Z",
@@ -3693,6 +3753,21 @@
     ]
   },
   {
+    "registryName": "finance.norman/mcp-server",
+    "registryVersion": "0.1.7",
+    "publishedAt": "2026-02-19T14:20:46.349672Z",
+    "displayName": "Norman MCP Server",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.norman.finance/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "fyi.ground/ground",
     "registryVersion": "0.2.0",
     "publishedAt": "2026-01-13T22:59:46.616373Z",
@@ -4024,8 +4099,8 @@
   },
   {
     "registryName": "io.github.airweave-ai/search",
-    "registryVersion": "0.8.91",
-    "publishedAt": "2026-02-16T22:38:17.339923Z",
+    "registryVersion": "0.8.93",
+    "publishedAt": "2026-02-20T01:20:12.212803Z",
     "displayName": "Airweave Search",
     "sseOnly": false,
     "remotes": [
@@ -4474,8 +4549,8 @@
   },
   {
     "registryName": "io.github.clouatre-labs/math-mcp-learning-server",
-    "registryVersion": "0.11.1",
-    "publishedAt": "2026-02-16T03:31:22.709971Z",
+    "registryVersion": "0.11.2",
+    "publishedAt": "2026-02-19T15:29:37.173736Z",
     "displayName": "Math MCP Learning",
     "sseOnly": false,
     "remotes": [
@@ -4699,8 +4774,8 @@
   },
   {
     "registryName": "io.github.github/github-mcp-server",
-    "registryVersion": "0.30.3",
-    "publishedAt": "2026-02-03T16:04:52.013723Z",
+    "registryVersion": "0.31.0",
+    "publishedAt": "2026-02-19T16:48:07.502196Z",
     "displayName": "GitHub",
     "sseOnly": false,
     "remotes": [
@@ -4908,6 +4983,21 @@
     ]
   },
   {
+    "registryName": "io.github.jasonxkensei/xproof",
+    "registryVersion": "1.2.0",
+    "publishedAt": "2026-02-19T19:27:58.421448Z",
+    "displayName": "xProof",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://xproof.app/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.jchen225/gloria-mcp",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-02-17T22:59:16.416819Z",
@@ -5014,8 +5104,8 @@
   },
   {
     "registryName": "io.github.klever-io/mcp-klever-vm",
-    "registryVersion": "1.1.1",
-    "publishedAt": "2026-02-12T02:28:51.841393Z",
+    "registryVersion": "1.2.5",
+    "publishedAt": "2026-02-20T03:06:48.218521Z",
     "displayName": "Klever blockchain smart contract development.",
     "sseOnly": false,
     "remotes": [
@@ -6354,6 +6444,21 @@
     ]
   },
   {
+    "registryName": "io.github.vivid-money/vivid-mcp",
+    "registryVersion": "0.1.0",
+    "publishedAt": "2026-02-19T14:28:31.814575Z",
+    "displayName": "Vivid MCP",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.prime.vivid.money/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.Vonage/vonage-documentation-mcp",
     "registryVersion": "1.0.0",
     "publishedAt": "2025-12-15T02:09:27.161402Z",
@@ -6407,6 +6512,21 @@
     "remotes": [
       {
         "url": "https://api.wellapp.ai/v1/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.WillNigri/crowterminal",
+    "registryVersion": "2.3.0",
+    "publishedAt": "2026-02-19T14:56:13.155805Z",
+    "displayName": "Crowterminal",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.crowterminal.com/api/agent",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -6616,8 +6736,8 @@
   },
   {
     "registryName": "io.sanity.www/mcp",
-    "registryVersion": "2.13.1",
-    "publishedAt": "2026-02-18T18:29:04.802907Z",
+    "registryVersion": "2.13.2",
+    "publishedAt": "2026-02-19T21:21:01.732014Z",
     "displayName": "Sanity",
     "sseOnly": false,
     "remotes": [
@@ -6923,6 +7043,66 @@
     "remotes": [
       {
         "url": "https://ai.todoist.net/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "nz.phos/analytics-engine",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-02-19T09:31:42.864248Z",
+    "displayName": "Phos Analytics engine",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://analytics.phos.nz/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "nz.phos/marketing-engine",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-02-19T09:31:42.10402Z",
+    "displayName": "Phos Marketing engine",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.phos.nz/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "nz.phos/piranha",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-02-19T19:23:29.13614Z",
+    "displayName": "Phos Piranha",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://piranha-ghcr.onrender.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "nz.phos/sales-engine",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-02-19T09:31:43.6283Z",
+    "displayName": "Phos Sales engine",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://sales.phos.nz/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
