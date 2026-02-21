@@ -99,7 +99,7 @@
     background: #0d1117;
     padding: 8px 12px;
     display: grid;
-    grid-template-columns: 36px 1fr auto auto auto auto;
+    grid-template-columns: 20px 36px 1fr auto auto auto auto;
     gap: 0 8px;
     align-items: center;
     height: 36px;
@@ -112,6 +112,31 @@
   .provider-card.search-match { outline: 1px solid #58a6ff44; outline-offset: -1px; opacity: 1; }
   .provider-card.search-current { outline: 2px solid #58a6ff; outline-offset: -2px; opacity: 1; background: #161b22; }
   .provider-card.filtered-out { display: none; }
+
+  /* Favorite heart */
+  .fav-heart {
+    font-size: 14px; color: #484f58; cursor: pointer; text-align: center;
+    user-select: none; line-height: 1; transition: color 0.15s;
+  }
+  .fav-heart:hover { color: #8b949e; }
+  .fav-heart.favorited { color: #f778ba; }
+  .fav-heart.favorited:hover { color: #da3675; }
+  .fav-heart.shake {
+    animation: heart-shake 0.4s ease;
+  }
+  @keyframes heart-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-3px); color: #f85149; }
+    40% { transform: translateX(3px); color: #f85149; }
+    60% { transform: translateX(-2px); color: #f85149; }
+    80% { transform: translateX(2px); color: #f85149; }
+  }
+
+  /* Favorites separator */
+  .fav-separator {
+    grid-column: 1 / -1;
+    border-top: 1px dashed #30363d;
+  }
 
   /* Health icons (overlapping dots) */
   .health-icons { display: flex; align-items: center; justify-content: flex-start; min-width: 36px; }
@@ -236,7 +261,7 @@
     .grid { grid-template-columns: 1fr; }
     .mobile-hidden { display: none; }
     .provider-card {
-      grid-template-columns: 36px 1fr auto auto;
+      grid-template-columns: 20px 36px 1fr auto auto;
     }
     .provider-card .uptime,
     .provider-card .status-bar { display: none; }
@@ -280,6 +305,44 @@ let lastCheckTime = null;
 let nextCheckTime = null;
 let currentView = 'dashboard'; // 'dashboard' | 'detail' | 'changelog'
 let currentDetailName = null;
+
+// === Favorites ===
+const FAV_STORAGE_KEY = 'mcpdd_favorites';
+const FAV_MAX = 50;
+
+function loadFavoritesFromStorage() {
+  try {
+    const raw = localStorage.getItem(FAV_STORAGE_KEY);
+    if (raw) return new Set(JSON.parse(raw));
+  } catch {}
+  return new Set();
+}
+function saveFavorites(favSet) {
+  localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify([...favSet]));
+}
+const favorites = loadFavoritesFromStorage();
+
+function toggleFavorite(registryName, heartEl) {
+  if (favorites.has(registryName)) {
+    favorites.delete(registryName);
+    saveFavorites(favorites);
+    fetch('/api/server/' + encodeURIComponent(registryName) + '/favorite', { method: 'DELETE' }).catch(() => {});
+  } else {
+    if (favorites.size >= FAV_MAX) {
+      // Shake animation on the heart
+      if (heartEl) {
+        heartEl.classList.remove('shake');
+        void heartEl.offsetWidth; // reflow to restart animation
+        heartEl.classList.add('shake');
+      }
+      return;
+    }
+    favorites.add(registryName);
+    saveFavorites(favorites);
+    fetch('/api/server/' + encodeURIComponent(registryName) + '/favorite', { method: 'POST' }).catch(() => {});
+  }
+  if (currentView === 'dashboard') renderDashboard();
+}
 
 const main = document.getElementById("main-content");
 const summaryText = document.getElementById("summary-text");
@@ -358,15 +421,30 @@ function renderDashboard() {
   grid.id = 'grid';
   cardRefs = [];
 
-  // Sort: worst status first, then most recently probed
+  // Sort: favorites first, then worst status, then alphabetical
   const sorted = [...providers].sort((a, b) => {
+    const fa = favorites.has(a.registryName) ? 0 : 1;
+    const fb = favorites.has(b.registryName) ? 0 : 1;
+    if (fa !== fb) return fa - fb;
     const sa = statusOrder[a.aggregateStatus] ?? 4;
     const sb = statusOrder[b.aggregateStatus] ?? 4;
     if (sa !== sb) return sa - sb;
     return a.displayName.localeCompare(b.displayName);
   });
 
+  let lastWasFav = false;
   sorted.forEach(p => {
+    const isFav = favorites.has(p.registryName);
+
+    // Insert separator between favorites and non-favorites
+    if (lastWasFav && !isFav) {
+      const sep = document.createElement('div');
+      sep.className = 'fav-separator';
+      sep.dataset.favSep = '1';
+      grid.appendChild(sep);
+    }
+    lastWasFav = isFav;
+
     const isMulti = p.remoteCount > 1;
     const card = document.createElement('div');
     card.className = 'provider-card' + (isMulti ? ' clickable' : '');
@@ -375,9 +453,9 @@ function renderDashboard() {
     const anyProtected = p.remotes.some(r => r.auth === 'protected');
     card.dataset.auth = anyProtected ? 'protected' : 'open';
 
-    // Mobile: hide healthy/unknown
+    // Mobile: hide healthy/unknown (but not favorites)
     const isHealthy = p.aggregateStatus === 'healthy' || p.aggregateStatus === 'unknown';
-    if (isHealthy) card.classList.add('mobile-hidden');
+    if (isHealthy && !isFav) card.classList.add('mobile-hidden');
 
     // Health icons
     const iconsHtml = p.healthIcons.map(c => `<div class="health-dot ${dotClasses[c] || 'dot-gray'}"></div>`).join('');
@@ -393,6 +471,7 @@ function renderDashboard() {
     const ticks = (p.history || []).map(h => tickColors[h.status] || 'gray');
 
     card.innerHTML = `
+      <span class="fav-heart ${isFav ? 'favorited' : ''}" data-reg="${escapeHtml(p.registryName)}">\u2665</span>
       <div class="health-icons">${iconsHtml}</div>
       <div class="name-area">
         <span class="provider-name" title="${escapeHtml(p.displayName)}">${escapeHtml(ellipsize(p.displayName, 20))}</span>
@@ -404,6 +483,12 @@ function renderDashboard() {
       <span class="uptime">${uptimeText}</span>
       <div class="status-bar">${ticks.map(t => `<div class="tick tick-${t}"></div>`).join('')}</div>
     `;
+
+    // Heart click handler
+    card.querySelector('.fav-heart').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFavorite(p.registryName, e.currentTarget);
+    });
 
     if (isMulti) {
       card.addEventListener('click', () => navigate('/server/' + encodeURIComponent(p.registryName)));
@@ -434,10 +519,11 @@ async function renderDetail(registryName) {
 
     const iconsHtml = data.healthIcons.map(c => `<div class="health-dot ${dotClasses[c] || 'dot-gray'}"></div>`).join('');
 
+    const isFav = favorites.has(registryName);
     let html = `<div class="detail-view">
       <a class="detail-back" href="/" onclick="navigate('/');return false">&larr; Back to dashboard</a>
       <div class="detail-header">
-        <h1>${escapeHtml(data.displayName)}</h1>
+        <h1><span class="fav-heart ${isFav ? 'favorited' : ''}" id="detail-fav-heart" style="cursor:pointer;margin-right:6px">\u2665</span>${escapeHtml(data.displayName)}</h1>
         <div class="detail-meta">
           <span>${data.remoteCount} remote${data.remoteCount !== 1 ? 's' : ''}</span>
           <span>v${escapeHtml(data.registryVersion)}</span>
@@ -483,6 +569,12 @@ async function renderDetail(registryName) {
         this.textContent = 'Error';
         setTimeout(() => { this.disabled = false; this.textContent = 'Probe Now'; }, 2000);
       }
+    });
+
+    // Detail heart toggle
+    document.getElementById('detail-fav-heart').addEventListener('click', function() {
+      toggleFavorite(registryName, this);
+      this.classList.toggle('favorited', favorites.has(registryName));
     });
   } catch (err) {
     main.innerHTML = `<div class="detail-view"><p>Error loading provider: ${escapeHtml(err.message)}</p><a href="/" onclick="navigate('/');return false">&larr; Back</a></div>`;
@@ -591,8 +683,8 @@ function updateSummary() {
 
 // === Auth Filter ===
 let currentFilter = 'all';
-const filterCycle = ['all', 'open', 'protected'];
-const filterLabels = { all: 'All', open: 'Open', protected: 'Auth' };
+const filterCycle = ['all', 'open', 'protected', 'favorites'];
+const filterLabels = { all: 'All', open: 'Open', protected: 'Auth', favorites: '\u2665 Fav' };
 
 function applyFilter(filter) {
   currentFilter = filter;
@@ -601,11 +693,15 @@ function applyFilter(filter) {
   cardRefs.forEach(({ provider, el }) => {
     const anyProtected = provider.remotes.some(r => r.auth === 'protected');
     const auth = anyProtected ? 'protected' : 'open';
-    if (filter === 'all' || auth === filter) {
-      el.classList.remove('filtered-out');
-    } else {
-      el.classList.add('filtered-out');
-    }
+    let show = false;
+    if (filter === 'all') show = true;
+    else if (filter === 'favorites') show = favorites.has(provider.registryName);
+    else show = auth === filter;
+    el.classList.toggle('filtered-out', !show);
+  });
+  // Show separator only in "all" filter
+  document.querySelectorAll('.fav-separator').forEach(sep => {
+    sep.style.display = (filter === 'all' && favorites.size > 0) ? '' : 'none';
   });
   updateSummary();
   applySearch();

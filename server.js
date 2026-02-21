@@ -17,6 +17,7 @@ const HISTORY_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const MAX_CONCURRENT_PROBES = parseInt(process.env.MAX_CONCURRENT_PROBES || '15');
 const DATA_DIR = join(__dirname, 'data');
 const HISTORY_FILE = join(DATA_DIR, 'history.json');
+const FAVORITES_FILE = join(DATA_DIR, 'favorites.json');
 
 // --- Load provider configs ---
 function loadProviders() {
@@ -45,6 +46,7 @@ const providers = loadProviders();
 // --- In-memory state ---
 // History keyed by "registryName|url" (composite key per remote)
 const history = new Map();
+const favoriteCounts = new Map(); // registryName → aggregate favorite count
 let lastCheckTime = null;
 let nextCheckTime = null;
 let probeInProgress = false;
@@ -89,6 +91,35 @@ function persistHistory() {
     console.log(`Persisted history to ${HISTORY_FILE}`);
   } catch (err) {
     console.error(`Failed to persist history: ${err.message}`);
+  }
+}
+
+// --- Favorites persistence ---
+function loadFavorites() {
+  try {
+    if (existsSync(FAVORITES_FILE)) {
+      const data = JSON.parse(readFileSync(FAVORITES_FILE, 'utf-8'));
+      for (const [key, count] of Object.entries(data)) {
+        favoriteCounts.set(key, count);
+      }
+      console.log(`Loaded favorites from ${FAVORITES_FILE}`);
+    }
+  } catch (err) {
+    console.error(`Failed to load favorites: ${err.message}`);
+  }
+}
+
+function persistFavorites() {
+  try {
+    mkdirSync(DATA_DIR, { recursive: true });
+    const obj = {};
+    for (const [key, count] of favoriteCounts) {
+      if (count > 0) obj[key] = count;
+    }
+    writeFileSync(FAVORITES_FILE, JSON.stringify(obj));
+    console.log(`Persisted favorites to ${FAVORITES_FILE}`);
+  } catch (err) {
+    console.error(`Failed to persist favorites: ${err.message}`);
   }
 }
 
@@ -428,6 +459,34 @@ app.post('/api/server/:registryName/probe', async (req, res) => {
   });
 });
 
+// Favorite endpoints
+app.post('/api/server/:registryName/favorite', (req, res) => {
+  const name = decodeURIComponent(req.params.registryName);
+  const current = favoriteCounts.get(name) || 0;
+  favoriteCounts.set(name, current + 1);
+  res.json({ count: current + 1 });
+});
+
+app.delete('/api/server/:registryName/favorite', (req, res) => {
+  const name = decodeURIComponent(req.params.registryName);
+  const current = favoriteCounts.get(name) || 0;
+  const next = Math.max(0, current - 1);
+  if (next > 0) {
+    favoriteCounts.set(name, next);
+  } else {
+    favoriteCounts.delete(name);
+  }
+  res.json({ count: next });
+});
+
+app.get('/api/favorites', (req, res) => {
+  const sorted = [...favoriteCounts.entries()]
+    .filter(([, count]) => count > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([registryName, count]) => ({ registryName, count }));
+  res.json(sorted);
+});
+
 // Changelog endpoint
 app.get('/api/changelog', (req, res) => {
   const changelogFile = join(DATA_DIR, 'changelog.json');
@@ -450,6 +509,7 @@ app.get('/changelog', (req, res) => {
 
 // --- Start ---
 loadHistory();
+loadFavorites();
 
 const totalRemotes = providers.reduce((s, p) => s + p.remotes.length, 0);
 app.listen(PORT, () => {
@@ -458,7 +518,7 @@ app.listen(PORT, () => {
 
   probeAll();
   setInterval(probeAll, PROBE_INTERVAL_MS);
-  setInterval(persistHistory, PERSIST_INTERVAL_MS);
+  setInterval(() => { persistHistory(); persistFavorites(); }, PERSIST_INTERVAL_MS);
 
   // Auto-ingest from MCP Registry
   if (INGEST_INTERVAL_MS > 0) {
@@ -474,6 +534,7 @@ app.listen(PORT, () => {
 function shutdown() {
   console.log('\nShutting down...');
   persistHistory();
+  persistFavorites();
   process.exit(0);
 }
 process.on('SIGTERM', shutdown);
