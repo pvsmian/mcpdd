@@ -50,12 +50,7 @@
     top: 0;
     z-index: 99;
   }
-  .toolbar-left { display: flex; align-items: center; gap: 10px; }
-  .toolbar-right { display: flex; align-items: center; gap: 10px; }
-  .nav-links { display: flex; gap: 12px; font-size: 13px; }
-  .nav-links a { color: #8b949e; }
-  .nav-links a:hover { color: #f0f6fc; text-decoration: none; }
-  .nav-links a.active { color: #58a6ff; }
+  .toolbar-right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 
   /* Find box */
   .find-box { display: flex; align-items: center; gap: 2px; }
@@ -259,12 +254,6 @@
 </header>
 
 <div class="toolbar" id="toolbar">
-  <div class="toolbar-left">
-    <div class="nav-links">
-      <a href="/" onclick="navigate('/');return false" class="active" id="nav-dashboard">Dashboard</a>
-      <a href="/changelog" onclick="navigate('/changelog');return false" id="nav-changelog">Changelog</a>
-    </div>
-  </div>
   <div class="toolbar-right">
     <button class="auth-filter-btn" id="auth-filter-btn">All</button>
     <div class="find-box">
@@ -337,8 +326,7 @@ function navigate(path, push = true) {
 
 function route(path) {
   // Update nav links
-  document.getElementById('nav-dashboard').classList.toggle('active', path === '/');
-  document.getElementById('nav-changelog').classList.toggle('active', path === '/changelog');
+  // nav links removed from toolbar; changelog is in footer only
 
   if (path === '/changelog') {
     currentView = 'changelog';
