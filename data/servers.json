@@ -15,6 +15,21 @@
     ]
   },
   {
+    "registryName": "ai.anzenna/anzenna",
+    "registryVersion": "0.1",
+    "publishedAt": "2026-02-21T23:53:55.798606Z",
+    "displayName": "Anzenna",
+    "sseOnly": true,
+    "remotes": [
+      {
+        "url": "https://mcp.anzenna.ai/sse",
+        "transport": "sse",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "ai.appdeploy/deploy-app",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-02-09T15:16:30.60739Z",
@@ -1204,8 +1219,8 @@
   },
   {
     "registryName": "co.pipeboard/meta-ads-mcp",
-    "registryVersion": "1.0.43",
-    "publishedAt": "2026-02-19T22:39:23.187784Z",
+    "registryVersion": "1.0.44",
+    "publishedAt": "2026-02-21T23:09:05.045742Z",
     "displayName": "Pipeboard Meta ads",
     "sseOnly": false,
     "remotes": [
@@ -1884,6 +1899,21 @@
     ]
   },
   {
+    "registryName": "com.emergentphysicslab/waveguard",
+    "registryVersion": "2.0.2",
+    "publishedAt": "2026-02-21T07:38:58.332391Z",
+    "displayName": "WaveGuard",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://gpartin--waveguard-api-fastapi-app.modal.run/v2/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.enigma/enigma-mcp-server",
     "registryVersion": "1.0.0",
     "publishedAt": "2025-09-10T19:14:36.362564Z",
@@ -1945,6 +1975,36 @@
         "url": "https://backend.exoquery.com/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "com.ezbizservices/seo-marketing",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-02-21T19:28:13.210452Z",
+    "displayName": "EzBiz SEO & Marketing Analysis",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://seo.ezbizservices.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "com.ezbizservices/social-media",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-02-21T19:28:17.954844Z",
+    "displayName": "EzBiz Social Media Analytics",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://social.ezbizservices.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
         "remoteName": "default"
       }
     ]
@@ -2380,8 +2440,8 @@
   },
   {
     "registryName": "com.linkbreakers/mcp",
-    "registryVersion": "1.22.0",
-    "publishedAt": "2026-02-21T00:49:46.623918Z",
+    "registryVersion": "1.23.0",
+    "publishedAt": "2026-02-22T01:11:48.860772Z",
     "displayName": "Linkbreakers MCP",
     "sseOnly": false,
     "remotes": [
@@ -4174,8 +4234,8 @@
   },
   {
     "registryName": "io.github.airweave-ai/search",
-    "registryVersion": "0.8.96",
-    "publishedAt": "2026-02-21T03:11:52.146086Z",
+    "registryVersion": "0.8.97",
+    "publishedAt": "2026-02-21T19:24:00.377077Z",
     "displayName": "Airweave Search",
     "sseOnly": false,
     "remotes": [
@@ -4818,6 +4878,21 @@
     ]
   },
   {
+    "registryName": "io.github.fasuizu-br/speech-ai",
+    "registryVersion": "2.0.1",
+    "publishedAt": "2026-02-22T00:07:00.974637Z",
+    "displayName": "Speech AI - Pronunciation, TTS & STT",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://pronunciation-mcp.thankfulfield-a7857897.eastus.azurecontainerapps.io/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.firasmosbehi/compliance-auditor",
     "registryVersion": "0.1.0",
     "publishedAt": "2026-02-11T18:44:38.546171Z",
@@ -4871,6 +4946,21 @@
     "remotes": [
       {
         "url": "https://builders.sodax.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.gpartin/waveguard",
+    "registryVersion": "2.0.4",
+    "publishedAt": "2026-02-21T07:31:09.994119Z",
+    "displayName": "WaveGuard (Deprecated)",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://example.com/deprecated",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -5036,6 +5126,21 @@
     "remotes": [
       {
         "url": "https://scb-mcp.onrender.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.jalexspringer/forage-shopping",
+    "registryVersion": "0.1.0",
+    "publishedAt": "2026-02-21T17:13:58.202872Z",
+    "displayName": "Forage Shopping",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://forageshopping.com/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -5914,6 +6019,21 @@
         "url": "https://api.justhappened.wtf/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.PlanExeOrg/planexe",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-02-21T14:38:11.55404Z",
+    "displayName": "PlanExe",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.planexe.org/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
         "remoteName": "default"
       }
     ]
@@ -7352,6 +7472,21 @@
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "public"
+      }
+    ]
+  },
+  {
+    "registryName": "support.supp/mcp-server",
+    "registryVersion": "1.0.3",
+    "publishedAt": "2026-02-21T19:08:45.206553Z",
+    "displayName": "Supp",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.supp.support",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
       }
     ]
   },
