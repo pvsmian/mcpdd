@@ -1720,8 +1720,8 @@
   },
   {
     "registryName": "com.agentictotem/web-extractor",
-    "registryVersion": "1.0.4",
-    "publishedAt": "2026-03-13T16:43:30.380314Z",
+    "registryVersion": "1.0.5",
+    "publishedAt": "2026-03-14T18:44:59.89249Z",
     "displayName": "AgenticTotem Web Extractor",
     "sseOnly": false,
     "remotes": [
@@ -4630,8 +4630,8 @@
   },
   {
     "registryName": "com.usesideways/sideways",
-    "registryVersion": "1.0.22",
-    "publishedAt": "2026-03-10T05:45:51.857891Z",
+    "registryVersion": "1.0.25",
+    "publishedAt": "2026-03-15T06:39:15.914933Z",
     "displayName": "Sideways",
     "sseOnly": false,
     "remotes": [
@@ -5199,6 +5199,21 @@
     ]
   },
   {
+    "registryName": "eu.velvoite/compliance",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T18:13:13.856686Z",
+    "displayName": "Velvoite Compliance",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.velvoite.eu/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "finance.double.agent4/knowledge-base",
     "registryVersion": "1.0.1",
     "publishedAt": "2025-10-17T17:31:54.847262Z",
@@ -5717,6 +5732,21 @@
     "remotes": [
       {
         "url": "https://mcp.aiqaramba.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.ako2345/android-security-analyzer",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T19:38:27.848667Z",
+    "displayName": "Android Security Analyzer",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://android-security-analyzer.ako-labs.workers.dev/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -6469,6 +6499,21 @@
         "url": "https://mcp.carsxe.com/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.cbolgiano/mochipdf",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-03-15T04:32:01.147267Z",
+    "displayName": "MochiPDF",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mochipdf.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
         "remoteName": "default"
       }
     ]
@@ -7740,6 +7785,21 @@
     ]
   },
   {
+    "registryName": "io.github.ivaavimusic/singularity",
+    "registryVersion": "1.1.0",
+    "publishedAt": "2026-03-14T13:47:40.351749Z",
+    "displayName": "Singularity Marketplace MCP",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.x402layer.cc/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.j-sulliman/hopgraph",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-03-06T01:11:20.915902Z",
@@ -7831,8 +7891,8 @@
   },
   {
     "registryName": "io.github.jerrysrodz/goldhold",
-    "registryVersion": "1.5.0",
-    "publishedAt": "2026-03-14T05:32:29.632188Z",
+    "registryVersion": "1.5.1",
+    "publishedAt": "2026-03-14T16:22:14.955765Z",
     "displayName": "Goldhold",
     "sseOnly": false,
     "remotes": [
@@ -7919,6 +7979,276 @@
     "remotes": [
       {
         "url": "https://archangel-agency-mcp.jordan-trana.workers.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/aarna-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:33.133091Z",
+    "displayName": "Aarna",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://aarna.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/aave-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:21.266066Z",
+    "displayName": "Aave",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://aave.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/beefy-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:23.674087Z",
+    "displayName": "Beefy",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://beefy.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/binance-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:30.839074Z",
+    "displayName": "Binance",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://binance.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/blockscout-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:40:57.153228Z",
+    "displayName": "Blockscout",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://blockscout.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/chainlink-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:14.045263Z",
+    "displayName": "Chainlink",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://chainlink.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/coingecko-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:35.484659Z",
+    "displayName": "Coingecko",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://coingecko.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/compound-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:18.947852Z",
+    "displayName": "Compound",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://compound.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/curve-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:26.13066Z",
+    "displayName": "Curve",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://curve.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/eigenlayer-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:11.589317Z",
+    "displayName": "Eigenlayer",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://eigenlayer.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/ens-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:09.126679Z",
+    "displayName": "Ens",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://ens.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/euler-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:39.44805Z",
+    "displayName": "Euler",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://euler.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/gmx-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:04.320544Z",
+    "displayName": "Gmx",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://gmx.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/jupiter-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:28.55058Z",
+    "displayName": "Jupiter",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://jupiter.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/lido-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:16.505202Z",
+    "displayName": "Lido",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://lido.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/maker-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:06.782505Z",
+    "displayName": "Maker",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://maker.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/stargate-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:40:59.521882Z",
+    "displayName": "Stargate",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://stargate.mcp.junct.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.junct-bot/synthetix-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T07:41:01.891759Z",
+    "displayName": "Synthetix",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://synthetix.mcp.junct.dev/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -8032,8 +8362,8 @@
   },
   {
     "registryName": "io.github.khalidsaidi/a2abench",
-    "registryVersion": "0.1.30",
-    "publishedAt": "2026-02-05T02:50:17.257705Z",
+    "registryVersion": "0.1.32",
+    "publishedAt": "2026-03-14T23:10:35.361782Z",
     "displayName": "A2ABench",
     "sseOnly": false,
     "remotes": [
@@ -8114,6 +8444,21 @@
     "remotes": [
       {
         "url": "https://finlab-ai.koreal6803.workers.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.KoumeKoubou/japan-realestate",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T19:01:36.038188Z",
+    "displayName": "Japan Real Estate Market Data",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp-server-japan-realestate.x7k9m.workers.dev/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -11352,9 +11697,24 @@
     ]
   },
   {
+    "registryName": "io.github.sarduine13-star/agent-teller",
+    "registryVersion": "1.1.0",
+    "publishedAt": "2026-03-14T10:06:49.896389Z",
+    "displayName": "Agent Teller",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://agent-teller-production.up.railway.app/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.sarduine13-star/botguard-pro",
-    "registryVersion": "1.0.2",
-    "publishedAt": "2026-03-14T03:21:36.498873Z",
+    "registryVersion": "1.0.3",
+    "publishedAt": "2026-03-14T07:34:52.815584Z",
     "displayName": "Botguard Pro",
     "sseOnly": false,
     "remotes": [
@@ -11758,8 +12118,8 @@
   },
   {
     "registryName": "io.github.speakmancip/speakmanai",
-    "registryVersion": "1.0.8",
-    "publishedAt": "2026-03-12T03:54:02.246632Z",
+    "registryVersion": "1.0.10",
+    "publishedAt": "2026-03-14T15:07:02.159668Z",
     "displayName": "Speakmanai",
     "sseOnly": false,
     "remotes": [
@@ -12738,6 +13098,21 @@
     ]
   },
   {
+    "registryName": "io.github.xbt786/hipaa-agent",
+    "registryVersion": "2.0.0",
+    "publishedAt": "2026-03-14T09:46:43.794826Z",
+    "displayName": "HIPAA Agent",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://hipaaagent.ai/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.yedanyagamiai-cmd/openclaw-mcp-servers",
     "registryVersion": "1.0.1",
     "publishedAt": "2026-03-03T14:02:38.247136Z",
@@ -13055,6 +13430,21 @@
     "remotes": [
       {
         "url": "https://ai.quanti.io/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.rtkmotion/data",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T18:26:16.019635Z",
+    "displayName": "RTK Motion — 4D Motion Capture Data",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.rtkmotion.io/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -13773,6 +14163,21 @@
     ]
   },
   {
+    "registryName": "st.demo/demost",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-14T22:24:42.733972Z",
+    "displayName": "demo.st",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://demo.st/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "support.supp/mcp-server",
     "registryVersion": "1.0.3",
     "publishedAt": "2026-02-21T19:08:45.206553Z",
@@ -13991,6 +14396,21 @@
     "remotes": [
       {
         "url": "https://partle.rubenayla.xyz/mcp/",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "xyz.sputnikx/market",
+    "registryVersion": "1.2.0",
+    "publishedAt": "2026-03-14T17:10:15.053823Z",
+    "displayName": "SputnikX Commerce & EU Trade Analytics",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://sputnikx.xyz/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
