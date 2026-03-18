@@ -301,8 +301,8 @@
   },
   {
     "registryName": "ai.cookiy/cookiy",
-    "registryVersion": "1.7.7",
-    "publishedAt": "2026-03-17T05:57:16.698006Z",
+    "registryVersion": "1.7.9",
+    "publishedAt": "2026-03-17T07:38:08.143522Z",
     "displayName": "Cookiy",
     "sseOnly": false,
     "remotes": [
@@ -577,8 +577,8 @@
   },
   {
     "registryName": "ai.mcpanalytics/analytics",
-    "registryVersion": "1.0.3",
-    "publishedAt": "2025-09-17T03:17:49.595346Z",
+    "registryVersion": "1.0.4",
+    "publishedAt": "2026-03-18T05:02:45.390281Z",
     "displayName": "Mcpanalytics Analytics",
     "sseOnly": false,
     "remotes": [
@@ -1206,6 +1206,21 @@
     ]
   },
   {
+    "registryName": "app.anamneseai/anamnese",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T11:22:32.790539Z",
+    "displayName": "Anamneseai Anamnese",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://anamneseai.app/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "app.certman/server",
     "registryVersion": "1.0.1",
     "publishedAt": "2026-02-08T00:10:32.652705Z",
@@ -1720,8 +1735,8 @@
   },
   {
     "registryName": "co.pipeboard/meta-ads-mcp",
-    "registryVersion": "1.0.57",
-    "publishedAt": "2026-03-13T22:14:24.508074Z",
+    "registryVersion": "1.0.59",
+    "publishedAt": "2026-03-17T18:53:25.902678Z",
     "displayName": "Pipeboard Meta ads",
     "sseOnly": false,
     "remotes": [
@@ -2544,6 +2559,21 @@
     ]
   },
   {
+    "registryName": "com.discolike/mcp-server",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T23:31:58.036855Z",
+    "displayName": "DiscoLike",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.discolike.com/v1/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.docfork/docfork-mcp",
     "registryVersion": "1.3.3",
     "publishedAt": "2026-01-14T07:37:36.327015Z",
@@ -2761,6 +2791,21 @@
         "url": "https://social.ezbizservices.com/mcp",
         "transport": "streamable-http",
         "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "com.fenetresurciel.mcp/skybridge",
+    "registryVersion": "0.0.2",
+    "publishedAt": "2026-03-17T16:42:37.368713Z",
+    "displayName": "TEST MCP",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.fenetresurciel.com",
+        "transport": "streamable-http",
+        "expectAuth": false,
         "remoteName": "default"
       }
     ]
@@ -3376,8 +3421,8 @@
   },
   {
     "registryName": "com.linkbreakers/mcp",
-    "registryVersion": "1.36.1",
-    "publishedAt": "2026-03-16T22:44:31.285647Z",
+    "registryVersion": "1.38.1",
+    "publishedAt": "2026-03-17T23:40:53.316794Z",
     "displayName": "Linkbreakers MCP",
     "sseOnly": false,
     "remotes": [
@@ -3525,10 +3570,10 @@
     ]
   },
   {
-    "registryName": "com.metricduck/mcp-server",
-    "registryVersion": "0.4.0",
-    "publishedAt": "2026-03-17T04:01:41.789358Z",
-    "displayName": "MetricDuck",
+    "registryName": "com.metricduck/financial-analysis",
+    "registryVersion": "0.4.1",
+    "publishedAt": "2026-03-18T06:09:44.238629Z",
+    "displayName": "MetricDuck — Financial Analysis",
     "sseOnly": false,
     "remotes": [
       {
@@ -4008,6 +4053,21 @@
     ]
   },
   {
+    "registryName": "com.prereason/mcp",
+    "registryVersion": "0.7.2",
+    "publishedAt": "2026-03-18T05:18:41.164321Z",
+    "displayName": "PreReason",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.prereason.com/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.produktly/mcp-server",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-03-06T20:49:15.06579Z",
@@ -4294,8 +4354,8 @@
   },
   {
     "registryName": "com.senzing/mcp",
-    "registryVersion": "0.20.2",
-    "publishedAt": "2026-03-13T03:40:56.523695Z",
+    "registryVersion": "0.20.7",
+    "publishedAt": "2026-03-18T03:36:22.342114Z",
     "displayName": "Senzing",
     "sseOnly": false,
     "remotes": [
@@ -5274,6 +5334,21 @@
     ]
   },
   {
+    "registryName": "dev.workers.selbyventurecap.cf-worker/apollo-salesforce-mapper",
+    "registryVersion": "2.0.0",
+    "publishedAt": "2026-03-18T03:51:03.272703Z",
+    "displayName": "Workers Apollo salesforce mapper",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://cf-worker.selbyventurecap.workers.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "direct.openclaw/mcp",
     "registryVersion": "1.0.1",
     "publishedAt": "2026-03-12T01:46:25.315848Z",
@@ -5417,6 +5492,21 @@
     "remotes": [
       {
         "url": "https://mcp.ground.fyi/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "fyi.medrates/mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T23:47:48.997136Z",
+    "displayName": "MedRates",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.medrates.fyi/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -5680,8 +5770,8 @@
   },
   {
     "registryName": "io.github.98lukehall/renoun",
-    "registryVersion": "1.3.1",
-    "publishedAt": "2026-03-17T00:37:32.282239Z",
+    "registryVersion": "1.4.0",
+    "publishedAt": "2026-03-17T19:23:34.291901Z",
     "displayName": "ReNoUn — Crypto Regime Classification",
     "sseOnly": false,
     "remotes": [
@@ -5762,6 +5852,21 @@
     "remotes": [
       {
         "url": "https://api.domainkits.com/v1/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.acarchidi/agentforge",
+    "registryVersion": "1.3.0",
+    "publishedAt": "2026-03-17T14:52:24.945013Z",
+    "displayName": "Agentforge",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://agentforge-taupe.vercel.app/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -6159,6 +6264,21 @@
     ]
   },
   {
+    "registryName": "io.github.andysalvo/agentic-platform",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T17:13:43.5593Z",
+    "displayName": "Agentic Platform",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.asalvocreative.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.AnimaApp/anima",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-02-04T13:10:54.14271Z",
@@ -6205,8 +6325,8 @@
   },
   {
     "registryName": "io.github.arcadia-finance/mcp-server",
-    "registryVersion": "0.3.1",
-    "publishedAt": "2026-03-16T16:30:26.789833Z",
+    "registryVersion": "0.3.2",
+    "publishedAt": "2026-03-17T17:05:48.60077Z",
     "displayName": "Arcadia Finance",
     "sseOnly": false,
     "remotes": [
@@ -7126,8 +7246,8 @@
   },
   {
     "registryName": "io.github.deapi-ai/mcp-server-deapi",
-    "registryVersion": "0.1.0",
-    "publishedAt": "2026-02-27T10:55:33.714144Z",
+    "registryVersion": "0.2.0",
+    "publishedAt": "2026-03-17T09:13:36.676138Z",
     "displayName": "deAPI MCP Server",
     "sseOnly": false,
     "remotes": [
@@ -7405,6 +7525,21 @@
         "url": "https://mcp.tweekit.io/mcp",
         "transport": "streamable-http",
         "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.ericismaking/canyougrab",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-03-17T17:55:43.129359Z",
+    "displayName": "CanYouGrab.it",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.canyougrab.it/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
         "remoteName": "default"
       }
     ]
@@ -8197,8 +8332,8 @@
   },
   {
     "registryName": "io.github.jflamb/fdic-mcp-server",
-    "registryVersion": "1.4.0",
-    "publishedAt": "2026-03-17T03:15:40.414781Z",
+    "registryVersion": "1.4.8",
+    "publishedAt": "2026-03-18T02:33:51.956373Z",
     "displayName": "FDIC BankFind MCP Server",
     "sseOnly": false,
     "remotes": [
@@ -9532,13 +9667,13 @@
   },
   {
     "registryName": "io.github.mctx-ai/help",
-    "registryVersion": "1.0.20",
-    "publishedAt": "2026-03-15T16:15:41.402811Z",
+    "registryVersion": "1.0.23",
+    "publishedAt": "2026-03-17T19:03:35.039245Z",
     "displayName": "Help",
     "sseOnly": true,
     "remotes": [
       {
-        "url": "https://help.mctx.ai/v1.0.20",
+        "url": "https://help.mctx.ai/v1.0.23",
         "transport": "sse",
         "expectAuth": false,
         "remoteName": "default"
@@ -9547,13 +9682,13 @@
   },
   {
     "registryName": "io.github.mctx-ai/notes",
-    "registryVersion": "1.3.2",
-    "publishedAt": "2026-03-16T04:27:25.144385Z",
+    "registryVersion": "1.4.1",
+    "publishedAt": "2026-03-17T13:11:10.492533Z",
     "displayName": "Notes",
     "sseOnly": true,
     "remotes": [
       {
-        "url": "https://notes.mctx.ai/v1.3.2",
+        "url": "https://notes.mctx.ai/v1.4.1",
         "transport": "sse",
         "expectAuth": false,
         "remoteName": "default"
@@ -9631,6 +9766,21 @@
         "url": "https://lets.measure.events/mcp",
         "transport": "streamable-http",
         "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.megachadxyz/megachad",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-18T00:44:43.236601Z",
+    "displayName": "MegaChad",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://megachad.xyz/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
         "remoteName": "default"
       }
     ]
@@ -9937,8 +10087,8 @@
   },
   {
     "registryName": "io.github.n24q02m/better-notion-mcp",
-    "registryVersion": "2.19.0",
-    "publishedAt": "2026-03-17T07:02:33.276609Z",
+    "registryVersion": "2.19.1",
+    "publishedAt": "2026-03-17T08:49:08.591322Z",
     "displayName": "Better Notion",
     "sseOnly": false,
     "remotes": [
@@ -10132,8 +10282,8 @@
   },
   {
     "registryName": "io.github.OneNicolas/mcp-service-public",
-    "registryVersion": "1.14.1",
-    "publishedAt": "2026-03-16T17:55:00.211932Z",
+    "registryVersion": "1.14.4",
+    "publishedAt": "2026-03-17T15:20:12.632927Z",
     "displayName": "Service Public France",
     "sseOnly": false,
     "remotes": [
@@ -10467,6 +10617,21 @@
     ]
   },
   {
+    "registryName": "io.github.plidezus/flomo-mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-18T02:24:30.34497Z",
+    "displayName": "Flomo",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://flomoapp.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.poojaBjAcharya/cdgcsearchmetadata",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-02-10T07:06:23.496345Z",
@@ -10723,13 +10888,13 @@
   },
   {
     "registryName": "io.github.robhunter/agentdeals",
-    "registryVersion": "0.1.0",
-    "publishedAt": "2026-02-24T22:12:54.451003Z",
+    "registryVersion": "0.2.0",
+    "publishedAt": "2026-03-17T16:07:23.950945Z",
     "displayName": "Agentdeals",
     "sseOnly": false,
     "remotes": [
       {
-        "url": "https://agentdeals-production.up.railway.app/mcp",
+        "url": "https://agentdeals.dev/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -13732,8 +13897,8 @@
   },
   {
     "registryName": "io.nestr/mcp",
-    "registryVersion": "0.1.45",
-    "publishedAt": "2026-03-11T04:19:37.188518Z",
+    "registryVersion": "0.1.47",
+    "publishedAt": "2026-03-18T06:00:34.650686Z",
     "displayName": "Nestr",
     "sseOnly": false,
     "remotes": [
@@ -13987,6 +14152,81 @@
         "url": "https://mcp-servers.bh.tkllabs.io:9780/navigation-mcp",
         "transport": "streamable-http",
         "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.tooloracle/memeoracle",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T17:01:04.535549Z",
+    "displayName": "Tooloracle Memeoracle",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://tooloracle.io/meme/mcp/",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.tooloracle/rankoracle",
+    "registryVersion": "2.0.0",
+    "publishedAt": "2026-03-17T17:00:43.095323Z",
+    "displayName": "Tooloracle Rankoracle",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://tooloracle.io/mcp/",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.tooloracle/shoporacle",
+    "registryVersion": "2.0.0",
+    "publishedAt": "2026-03-17T17:00:54.925678Z",
+    "displayName": "Tooloracle Shoporacle",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://tooloracle.io/shop/mcp/",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.tooloracle/smartmoneyoracle",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T17:01:14.168314Z",
+    "displayName": "Tooloracle Smartmoneyoracle",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://tooloracle.io/smart/mcp/",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.tooloracle/yieldoracle",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-17T17:01:22.811339Z",
+    "displayName": "Tooloracle Yieldoracle",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://tooloracle.io/yield/mcp/",
+        "transport": "streamable-http",
+        "expectAuth": false,
         "remoteName": "default"
       }
     ]
@@ -14488,8 +14728,8 @@
   },
   {
     "registryName": "org.virtualflybrain/vfb3-mcp",
-    "registryVersion": "1.4.4",
-    "publishedAt": "2026-02-10T12:01:10.416423Z",
+    "registryVersion": "1.6.2",
+    "publishedAt": "2026-03-17T12:03:53.230838Z",
     "displayName": "VirtualFlyBrain",
     "sseOnly": false,
     "remotes": [
