@@ -75,6 +75,21 @@
     ]
   },
   {
+    "registryName": "ai.agentrapay/agentra",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-22T18:16:07.628131Z",
+    "displayName": "Agentrapay Agentra",
+    "sseOnly": true,
+    "remotes": [
+      {
+        "url": "https://api.agentrapay.ai/mcp",
+        "transport": "sse",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "ai.alpic.mcp/alpic-mcp",
     "registryVersion": "0.0.1",
     "publishedAt": "2026-02-18T15:32:32.672631Z",
@@ -1372,8 +1387,8 @@
   },
   {
     "registryName": "app.marketgenius/mcp",
-    "registryVersion": "2026-03-19",
-    "publishedAt": "2026-03-19T10:06:01.61169Z",
+    "registryVersion": "2026-03-22",
+    "publishedAt": "2026-03-22T14:21:15.226981Z",
     "displayName": "Marketgenius",
     "sseOnly": false,
     "remotes": [
@@ -1394,6 +1409,21 @@
     "remotes": [
       {
         "url": "https://myghosts.app/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "app.paichart/mcp-hub",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T06:13:08.197978Z",
+    "displayName": "pAIchart MCP Hub",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://paichart.app/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -3930,6 +3960,21 @@
     ]
   },
   {
+    "registryName": "com.nivelrisk/mcp-server",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T01:22:43.396326Z",
+    "displayName": "Nivelrisk",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.nivelrisk.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.norvstar/mcp-server",
     "registryVersion": "0.1.0",
     "publishedAt": "2026-02-07T15:31:05.089863Z",
@@ -4504,8 +4549,8 @@
   },
   {
     "registryName": "com.senzing/mcp",
-    "registryVersion": "0.24.1",
-    "publishedAt": "2026-03-22T01:04:09.568679Z",
+    "registryVersion": "0.24.2",
+    "publishedAt": "2026-03-22T21:35:17.054764Z",
     "displayName": "Senzing",
     "sseOnly": false,
     "remotes": [
@@ -5244,6 +5289,21 @@
     ]
   },
   {
+    "registryName": "dev.agent-module/mcp",
+    "registryVersion": "0.9.9",
+    "publishedAt": "2026-03-23T03:25:52.239317Z",
+    "displayName": "Agent Module",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.agent-module.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "dev.anotherai/anotherai",
     "registryVersion": "0.1.0",
     "publishedAt": "2025-10-07T12:06:15.262277Z",
@@ -5934,6 +5994,21 @@
     ]
   },
   {
+    "registryName": "io.emc2ai/einstein",
+    "registryVersion": "2.0.0",
+    "publishedAt": "2026-03-22T21:40:57.186204Z",
+    "displayName": "Emc2ai Einstein",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://emc2ai.io/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.feedoracle/compliance",
     "registryVersion": "2.0.0",
     "publishedAt": "2026-02-20T09:09:41.650134Z",
@@ -6145,8 +6220,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-flux-pro",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:44.664992Z",
+    "registryVersion": "2026.3.22.2",
+    "publishedAt": "2026-03-22T18:46:44.529377Z",
     "displayName": "Flux AI image generation",
     "sseOnly": false,
     "remotes": [
@@ -6160,8 +6235,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-luma",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:31.224877Z",
+    "registryVersion": "2026.3.22.1",
+    "publishedAt": "2026-03-22T11:00:12.298084Z",
     "displayName": "Luma Dream Machine AI video generation",
     "sseOnly": false,
     "remotes": [
@@ -6175,8 +6250,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-midjourney",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:14.785114Z",
+    "registryVersion": "2026.3.23.0",
+    "publishedAt": "2026-03-23T00:59:12.284435Z",
     "displayName": "Midjourney AI image generation and editing",
     "sseOnly": false,
     "remotes": [
@@ -6190,8 +6265,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-nanobanana-pro",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:46:05.187032Z",
+    "registryVersion": "2026.3.23.0",
+    "publishedAt": "2026-03-23T00:59:15.646184Z",
     "displayName": "NanoBanana AI image generation and editing",
     "sseOnly": false,
     "remotes": [
@@ -6205,8 +6280,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-seedance",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:53.310864Z",
+    "registryVersion": "2026.3.22.1",
+    "publishedAt": "2026-03-22T11:00:35.582968Z",
     "displayName": "ByteDance Seedance AI video generation",
     "sseOnly": false,
     "remotes": [
@@ -6220,8 +6295,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-seedream-pro",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:46:01.071434Z",
+    "registryVersion": "2026.3.22.2",
+    "publishedAt": "2026-03-22T18:46:35.118033Z",
     "displayName": "ByteDance Seedream AI image generation",
     "sseOnly": false,
     "remotes": [
@@ -6235,8 +6310,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-serp",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:04.313684Z",
+    "registryVersion": "2026.3.22.2",
+    "publishedAt": "2026-03-22T18:46:12.864948Z",
     "displayName": "Google search results via SERP API",
     "sseOnly": false,
     "remotes": [
@@ -6250,8 +6325,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-shorturl",
-    "registryVersion": "2026.3.21.3",
-    "publishedAt": "2026-03-21T13:33:45.975362Z",
+    "registryVersion": "2026.3.22.1",
+    "publishedAt": "2026-03-22T18:45:56.338985Z",
     "displayName": "URL shortening and management",
     "sseOnly": false,
     "remotes": [
@@ -6265,8 +6340,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-sora",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:30.501393Z",
+    "registryVersion": "2026.3.22.1",
+    "publishedAt": "2026-03-22T11:00:23.162071Z",
     "displayName": "OpenAI Sora AI video generation",
     "sseOnly": false,
     "remotes": [
@@ -6280,8 +6355,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-suno",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:01.816918Z",
+    "registryVersion": "2026.3.22.1",
+    "publishedAt": "2026-03-22T11:00:00.664843Z",
     "displayName": "Suno AI music generation",
     "sseOnly": false,
     "remotes": [
@@ -6295,8 +6370,8 @@
   },
   {
     "registryName": "io.github.AceDataCloud/mcp-veo",
-    "registryVersion": "2026.3.22.0",
-    "publishedAt": "2026-03-22T03:45:37.171522Z",
+    "registryVersion": "2026.3.22.1",
+    "publishedAt": "2026-03-22T11:00:20.364091Z",
     "displayName": "Google Veo AI video generation",
     "sseOnly": false,
     "remotes": [
@@ -6424,6 +6499,21 @@
         "url": "https://kachink.ahmadsl.workers.dev/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.ahutto87/parsel",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-22T15:45:42.157352Z",
+    "displayName": "Parsel",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://tt6a1STd9c1tiDzXW.apify.actor/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
         "remoteName": "default"
       }
     ]
@@ -6842,6 +6932,21 @@
     "remotes": [
       {
         "url": "https://mcp.ateam-ai.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.ariffazil/arifosmcp",
+    "registryVersion": "2026.03.22",
+    "publishedAt": "2026-03-22T18:07:19.979723Z",
+    "displayName": "arifOS — Constitutional AI Governance",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://arifosmcp.arif-fazil.com/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -7359,6 +7464,21 @@
     ]
   },
   {
+    "registryName": "io.github.catalo-ai/catalo",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-22T21:47:46.928068Z",
+    "displayName": "Catalo.ai",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://catalo.ai/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.causehacker/quicksign",
     "registryVersion": "0.1.1",
     "publishedAt": "2026-03-15T22:01:48.520725Z",
@@ -7651,8 +7771,8 @@
   },
   {
     "registryName": "io.github.creator35lwb-web/verifimind-genesis",
-    "registryVersion": "2.2.0",
-    "publishedAt": "2026-03-09T01:20:44.053611Z",
+    "registryVersion": "2.3.0",
+    "publishedAt": "2026-03-23T04:35:10.482521Z",
     "displayName": "VerifiMind PEAS - RefleXion Trinity",
     "sseOnly": false,
     "remotes": [
@@ -8866,8 +8986,8 @@
   },
   {
     "registryName": "io.github.ivaavimusic/singularity",
-    "registryVersion": "1.2.2",
-    "publishedAt": "2026-03-16T16:14:18.704915Z",
+    "registryVersion": "1.6.0",
+    "publishedAt": "2026-03-22T17:51:43.886265Z",
     "displayName": "Singularity Layer MCP",
     "sseOnly": false,
     "remotes": [
@@ -11495,6 +11615,21 @@
     "remotes": [
       {
         "url": "https://flomoapp.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.Polsia-Inc/slb-florida-business-intelligence",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T06:45:35.893923Z",
+    "displayName": "SLB Florida Business Intelligence",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://support-local-businesses.polsia.app/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -14916,6 +15051,21 @@
     ]
   },
   {
+    "registryName": "io.kolmo.www/kolmo-mcp-server",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-03-23T07:20:15.455066Z",
+    "displayName": "Kolmo",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://www.kolmo.io/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.metavert/llmopt",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-03-06T01:35:55.740536Z",
@@ -14962,8 +15112,8 @@
   },
   {
     "registryName": "io.nestr/mcp",
-    "registryVersion": "0.1.48",
-    "publishedAt": "2026-03-19T03:17:06.101744Z",
+    "registryVersion": "0.1.49",
+    "publishedAt": "2026-03-23T04:31:35.547557Z",
     "displayName": "Nestr",
     "sseOnly": false,
     "remotes": [
@@ -15103,8 +15253,8 @@
   },
   {
     "registryName": "io.sanity.www/mcp",
-    "registryVersion": "2.15.0",
-    "publishedAt": "2026-03-13T20:09:18.595497Z",
+    "registryVersion": "2.15.1",
+    "publishedAt": "2026-03-22T17:34:41.592717Z",
     "displayName": "Sanity",
     "sseOnly": false,
     "remotes": [
@@ -16003,8 +16153,8 @@
   },
   {
     "registryName": "so.pharaoh/pharaoh",
-    "registryVersion": "1.0.6",
-    "publishedAt": "2026-03-21T14:17:24.8407Z",
+    "registryVersion": "1.0.7",
+    "publishedAt": "2026-03-22T14:18:27.979404Z",
     "displayName": "Pharaoh",
     "sseOnly": true,
     "remotes": [
