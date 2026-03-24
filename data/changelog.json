@@ -1,5 +1,563 @@
 [
   {
+    "timestamp": "2026-03-24T07:14:56.322Z",
+    "providerCount": 1016,
+    "added": [
+      {
+        "registryName": "com.arcjet/mcp",
+        "displayName": "Arcjet"
+      },
+      {
+        "registryName": "com.nitrosend/nitrosend",
+        "displayName": "Nitrosend"
+      },
+      {
+        "registryName": "com.qualequest/governance",
+        "displayName": "Qualequest Governance"
+      },
+      {
+        "registryName": "dev.agentsim/mcp",
+        "displayName": "AgentSIM"
+      },
+      {
+        "registryName": "io.github.cloudinary/asset-management-mcp",
+        "displayName": "Cloudinary Asset Management"
+      },
+      {
+        "registryName": "io.github.cthulhutoo/agentry",
+        "displayName": "Agentry"
+      },
+      {
+        "registryName": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
+        "displayName": "ClinicalTrials.gov v2 API"
+      },
+      {
+        "registryName": "io.github.cyanheads/hn-mcp-server",
+        "displayName": "Hacker News — feeds"
+      },
+      {
+        "registryName": "io.github.cyanheads/pubchem-mcp-server",
+        "displayName": "PubChem"
+      },
+      {
+        "registryName": "io.github.cyanheads/pubmed-mcp-server",
+        "displayName": "Pubmed"
+      },
+      {
+        "registryName": "io.github.HariharRengan/lock-in-study-planner",
+        "displayName": "Lock In Study Planner"
+      },
+      {
+        "registryName": "io.github.omiiyamu/hiveclaw",
+        "displayName": "Hiveclaw"
+      },
+      {
+        "registryName": "io.github.peter120525-cmd/lawmadi-os",
+        "displayName": "법마디(Lawmadi) OS — Korean Legal AI"
+      },
+      {
+        "registryName": "io.github.roomza-inc/roomza",
+        "displayName": "Roomza Hotel Intelligence"
+      },
+      {
+        "registryName": "io.github.sigaihealth/cancer-support-hub",
+        "displayName": "Cancer Support Hub"
+      }
+    ],
+    "removed": [
+      {
+        "registryName": "io.github.Ryan-Clinton/academic-commercialization-pipeline-mcp",
+        "displayName": "Academic Commercialization Pipeline"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/academic-institution-talent-mcp",
+        "displayName": "Academic Institution Talent"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/adversarial-corporate-opacity-mcp",
+        "displayName": "Adversarial Corporate Opacity"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/adversarial-geopolitical-equilibrium-mcp",
+        "displayName": "Adversarial Geopolitical Equilibrium"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/adversarial-regulatory-arbitrage-mcp",
+        "displayName": "Adversarial Regulatory Arbitrage"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/agricultural-commodity-climate-mcp",
+        "displayName": "Agricultural Commodity Climate"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/ai-model-governance-mcp",
+        "displayName": "AI Model Governance"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/ai-training-data-quality-mcp",
+        "displayName": "AI Training Data Quality"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/autonomous-cyber-red-team-mcp",
+        "displayName": "Autonomous Cyber Red Team"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/aviation-safety-risk-mcp",
+        "displayName": "Aviation Safety Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/brand-narrative-intelligence-mcp",
+        "displayName": "Brand Narrative Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/cannabis-regulatory-intelligence-mcp",
+        "displayName": "Cannabis Regulatory Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/climate-economic-nexus-mcp",
+        "displayName": "Climate Economic Nexus"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/cognitive-warfare-psyops-mcp",
+        "displayName": "Cognitive Warfare & PsyOps Analysis"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/commonwealth-corporate-registry-mcp",
+        "displayName": "Commonwealth Corporate Registry"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/competitive-digital-intelligence-mcp",
+        "displayName": "Competitive Digital Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/construction-project-risk-mcp",
+        "displayName": "Construction Project Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/corporate-deep-research-mcp",
+        "displayName": "Corporate Deep Research"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/corporate-political-exposure-mcp",
+        "displayName": "Corporate Political Exposure"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/counterparty-due-diligence-mcp",
+        "displayName": "Counterparty Due Diligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/critical-minerals-dependency-mcp",
+        "displayName": "Critical Minerals Dependency"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/crypto-compliance-intelligence-mcp",
+        "displayName": "Crypto Compliance Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/cybersecurity-intelligence-mcp",
+        "displayName": "Cybersecurity Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/data-center-siting-intelligence-mcp",
+        "displayName": "Data Center Siting Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/digital-infrastructure-exposure-mcp",
+        "displayName": "Digital Infrastructure Exposure"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/drone-uas-regulatory-intelligence-mcp",
+        "displayName": "Drone UAS Regulatory Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/elder-care-facility-intelligence-mcp",
+        "displayName": "Elder Care Facility Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/energy-transition-intelligence-mcp",
+        "displayName": "Energy Transition Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/energy-transition-resilience-mcp",
+        "displayName": "Energy Transition Resilience"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/entity-attack-surface-mcp",
+        "displayName": "Entity Attack Surface"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/esg-supply-chain-risk-mcp",
+        "displayName": "ESG Supply Chain Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/export-control-screening-mcp",
+        "displayName": "Export Control Screening"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/financial-crime-screening-mcp",
+        "displayName": "Financial Crime Screening"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/food-safety-supply-chain-mcp",
+        "displayName": "Food Safety Supply Chain"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/franchise-due-diligence-mcp",
+        "displayName": "Franchise Due Diligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/government-contract-intelligence-mcp",
+        "displayName": "Government Contract Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/healthcare-credentialing-intelligence-mcp",
+        "displayName": "Healthcare Credentialing Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/higher-education-risk-mcp",
+        "displayName": "Higher Education Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/influencer-brand-safety-intelligence-mcp",
+        "displayName": "Influencer Brand Safety Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/infrastructure-location-risk-mcp",
+        "displayName": "Infrastructure Location Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/insurance-underwriting-intelligence-mcp",
+        "displayName": "Insurance Underwriting Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/investment-alternative-data-mcp",
+        "displayName": "Investment Alternative Data"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/ip-patent-trademark-mcp",
+        "displayName": "IP, Patent & Trademark Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/knowledge-graph-causal-discovery-mcp",
+        "displayName": "Knowledge Graph & Causal Discovery"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/law-enforcement-intelligence-mcp",
+        "displayName": "Law Enforcement Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/litigation-intelligence-mcp",
+        "displayName": "Litigation Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/logistics-freight-intelligence-mcp",
+        "displayName": "Logistics Freight Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/m-and-a-target-intelligence-mcp",
+        "displayName": "M&A Target Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/maritime-resource-compliance-mcp",
+        "displayName": "Maritime Resource Compliance"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/maritime-shipping-intelligence-mcp",
+        "displayName": "Maritime Shipping Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/market-microstructure-manipulation-mcp",
+        "displayName": "Market Microstructure Manipulation"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/municipal-fiscal-intelligence-mcp",
+        "displayName": "Municipal Fiscal Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/nonprofit-grant-intelligence-mcp",
+        "displayName": "Nonprofit Grant Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/nuclear-regulatory-intelligence-mcp",
+        "displayName": "Nuclear Regulatory Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/open-source-software-supply-chain-mcp",
+        "displayName": "Open Source Software Supply Chain"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/open-source-supply-chain-risk-mcp",
+        "displayName": "Open Source Supply Chain Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/pandemic-biosurveillance-mcp",
+        "displayName": "Pandemic Biosurveillance"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/pandemic-supply-chain-cascade-mcp",
+        "displayName": "Pandemic Supply Chain Cascade"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/pharma-pipeline-intelligence-mcp",
+        "displayName": "Pharma Pipeline Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/political-influence-network-mcp",
+        "displayName": "Political Influence Network"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/product-safety-consumer-risk-mcp",
+        "displayName": "Product Safety Consumer Risk"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/regulatory-arbitrage-detection-mcp",
+        "displayName": "Regulatory Arbitrage Detection"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/regulatory-change-intelligence-mcp",
+        "displayName": "Regulatory Change Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/research-integrity-screening-mcp",
+        "displayName": "Research Integrity Screening"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/sanctions-evasion-network-mcp",
+        "displayName": "Sanctions Evasion Network"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/scientific-fraud-detection-mcp",
+        "displayName": "Scientific Fraud Detection"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/sovereign-debt-contagion-geopolitical-mcp",
+        "displayName": "Sovereign Debt Contagion Geopolitical"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/sovereign-debt-contagion-mcp",
+        "displayName": "Sovereign Debt Contagion"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/sovereign-debt-crisis-mcp",
+        "displayName": "Sovereign Debt Crisis"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/space-industry-intelligence-mcp",
+        "displayName": "Space Industry Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/startup-ecosystem-intelligence-mcp",
+        "displayName": "Startup Ecosystem Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/supply-chain-digital-twin-mcp",
+        "displayName": "Supply Chain Digital Twin"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/systemic-risk-contagion-mcp",
+        "displayName": "Systemic Risk Contagion"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/tech-ecosystem-analysis-mcp",
+        "displayName": "Tech Ecosystem Analysis"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/trade-based-money-laundering-mcp",
+        "displayName": "Trade-Based Money Laundering Detection"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/travel-risk-intelligence-mcp",
+        "displayName": "Travel Risk Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/uk-business-compliance-mcp",
+        "displayName": "UK Business Compliance"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/uk-regulatory-ecosystem-mcp",
+        "displayName": "UK Regulatory Ecosystem"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/water-utility-risk-intelligence-mcp",
+        "displayName": "Water Utility Risk Intelligence"
+      },
+      {
+        "registryName": "io.github.Ryan-Clinton/workforce-competitive-intelligence-mcp",
+        "displayName": "Workforce Competitive Intelligence"
+      }
+    ],
+    "changed": [
+      {
+        "registryName": "ai.thinkneo/control-plane",
+        "displayName": "ThinkNEO Control Plane",
+        "oldVersion": "1.0.0",
+        "newVersion": "1.0.2",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "app.marketgenius/mcp",
+        "displayName": "Marketgenius",
+        "oldVersion": "2026-03-22",
+        "newVersion": "2026-03-23",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "co.pipeboard/meta-ads-mcp",
+        "displayName": "Pipeboard Meta ads",
+        "oldVersion": "1.0.60",
+        "newVersion": "1.0.63",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "com.apify/apify-mcp-server",
+        "displayName": "Apify",
+        "oldVersion": "0.9.12",
+        "newVersion": "0.9.13",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "com.ivisa.www/mcp",
+        "displayName": "Ivisa",
+        "oldVersion": "0.0.2",
+        "newVersion": "0.0.3",
+        "oldRemoteCount": 2,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "com.linkbreakers/mcp",
+        "displayName": "Linkbreakers MCP",
+        "oldVersion": "1.40.0",
+        "newVersion": "1.41.0",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "com.senzing/mcp",
+        "displayName": "Senzing",
+        "oldVersion": "0.24.2",
+        "newVersion": "0.25.3",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.airweave-ai/search",
+        "displayName": "Airweave Search",
+        "oldVersion": "0.9.47",
+        "newVersion": "0.9.51",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.Damien829/aipaygen",
+        "displayName": "AiPayGen — 250 AI tools for Agents",
+        "oldVersion": "1.7.1",
+        "newVersion": "1.9.4",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.gosodax/builders-mcp",
+        "displayName": "SODAX Builders MCP",
+        "oldVersion": "1.0.2",
+        "newVersion": "1.1.0",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.laibniz/scholarfetch",
+        "displayName": "ScholarFetch",
+        "oldVersion": "0.2.0",
+        "newVersion": "0.2.1",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.mctx-ai/bible-study",
+        "displayName": "Bible Study",
+        "oldVersion": "1.11.0",
+        "newVersion": "1.11.1",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.mctx-ai/help",
+        "displayName": "Help",
+        "oldVersion": "1.0.28",
+        "newVersion": "1.0.33",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.mctx-ai/notes",
+        "displayName": "Notes",
+        "oldVersion": "1.4.4",
+        "newVersion": "1.4.5",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.mctx-ai/todos",
+        "displayName": "Todos",
+        "oldVersion": "2.0.4",
+        "newVersion": "2.0.5",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.n24q02m/better-notion-mcp",
+        "displayName": "Better Notion",
+        "oldVersion": "2.19.2",
+        "newVersion": "2.20.0",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.pouria3/bstorms",
+        "displayName": "bstorms.ai — Agent Playbook Marketplace",
+        "oldVersion": "1.0.8",
+        "newVersion": "3.0.0",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.github.wyattbenno777/icme-preflight",
+        "displayName": "Icme Preflight",
+        "oldVersion": "1.0.0",
+        "newVersion": "1.0.1",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.kolmo.www/kolmo-mcp-server",
+        "displayName": "Kolmo",
+        "oldVersion": "1.0.1",
+        "newVersion": "1.0.2",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "io.nestr/mcp",
+        "displayName": "Nestr",
+        "oldVersion": "0.1.49",
+        "newVersion": "0.1.50",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      },
+      {
+        "registryName": "so.pharaoh/pharaoh",
+        "displayName": "Pharaoh",
+        "oldVersion": "1.0.7",
+        "newVersion": "1.0.8",
+        "oldRemoteCount": 1,
+        "newRemoteCount": 1
+      }
+    ]
+  },
+  {
     "timestamp": "2026-03-23T07:21:58.331Z",
     "providerCount": 1081,
     "added": [

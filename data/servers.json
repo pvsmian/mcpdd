@@ -937,9 +937,9 @@
   },
   {
     "registryName": "ai.thinkneo/control-plane",
-    "registryVersion": "1.0.0",
-    "publishedAt": "2026-03-21T20:24:53.637327Z",
-    "displayName": "Thinkneo Control plane",
+    "registryVersion": "1.0.2",
+    "publishedAt": "2026-03-23T21:54:21.075188Z",
+    "displayName": "ThinkNEO Control Plane",
     "sseOnly": false,
     "remotes": [
       {
@@ -1387,8 +1387,8 @@
   },
   {
     "registryName": "app.marketgenius/mcp",
-    "registryVersion": "2026-03-22",
-    "publishedAt": "2026-03-22T14:21:15.226981Z",
+    "registryVersion": "2026-03-23",
+    "publishedAt": "2026-03-23T07:54:41.469114Z",
     "displayName": "Marketgenius",
     "sseOnly": false,
     "remotes": [
@@ -1900,8 +1900,8 @@
   },
   {
     "registryName": "co.pipeboard/meta-ads-mcp",
-    "registryVersion": "1.0.60",
-    "publishedAt": "2026-03-19T17:20:58.692816Z",
+    "registryVersion": "1.0.63",
+    "publishedAt": "2026-03-24T04:12:13.249075Z",
     "displayName": "Pipeboard Meta ads",
     "sseOnly": false,
     "remotes": [
@@ -2131,8 +2131,8 @@
   },
   {
     "registryName": "com.apify/apify-mcp-server",
-    "registryVersion": "0.9.12",
-    "publishedAt": "2026-03-20T10:22:26.445376Z",
+    "registryVersion": "0.9.13",
+    "publishedAt": "2026-03-23T17:24:14.53482Z",
     "displayName": "Apify",
     "sseOnly": false,
     "remotes": [
@@ -2168,6 +2168,21 @@
     "remotes": [
       {
         "url": "https://mcp.appsflyer.com/auth/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "com.arcjet/mcp",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T22:05:37.064727Z",
+    "displayName": "Arcjet",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.arcjet.com/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -3430,22 +3445,16 @@
   },
   {
     "registryName": "com.ivisa.www/mcp",
-    "registryVersion": "0.0.2",
-    "publishedAt": "2025-10-30T18:49:54.925381Z",
-    "displayName": "iVisa MCP Server",
+    "registryVersion": "0.0.3",
+    "publishedAt": "2026-03-23T18:07:13.989716Z",
+    "displayName": "Ivisa",
     "sseOnly": false,
     "remotes": [
       {
         "url": "https://www.ivisa.com/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
-        "remoteName": "mcp"
-      },
-      {
-        "url": "https://www.ivisa.com/mcp/chatgpt",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "chatgpt"
+        "remoteName": "default"
       }
     ]
   },
@@ -3601,8 +3610,8 @@
   },
   {
     "registryName": "com.linkbreakers/mcp",
-    "registryVersion": "1.40.0",
-    "publishedAt": "2026-03-21T10:20:45.00828Z",
+    "registryVersion": "1.41.0",
+    "publishedAt": "2026-03-23T16:38:47.764281Z",
     "displayName": "Linkbreakers MCP",
     "sseOnly": false,
     "remotes": [
@@ -3960,6 +3969,21 @@
     ]
   },
   {
+    "registryName": "com.nitrosend/nitrosend",
+    "registryVersion": "0.6.2",
+    "publishedAt": "2026-03-24T05:34:10.655483Z",
+    "displayName": "Nitrosend",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.nitrosend.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.nivelrisk/mcp-server",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-03-23T01:22:43.396326Z",
@@ -4308,6 +4332,21 @@
     ]
   },
   {
+    "registryName": "com.qualequest/governance",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T11:03:20.958475Z",
+    "displayName": "Qualequest Governance",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://qualequest.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "com.qualityclouds/mcp-server-qualityclouds",
     "registryVersion": "1.0.2",
     "publishedAt": "2026-01-16T09:47:38.486453Z",
@@ -4549,8 +4588,8 @@
   },
   {
     "registryName": "com.senzing/mcp",
-    "registryVersion": "0.24.2",
-    "publishedAt": "2026-03-22T21:35:17.054764Z",
+    "registryVersion": "0.25.3",
+    "publishedAt": "2026-03-23T23:21:42.958594Z",
     "displayName": "Senzing",
     "sseOnly": false,
     "remotes": [
@@ -5297,6 +5336,21 @@
     "remotes": [
       {
         "url": "https://api.agent-module.dev/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "dev.agentsim/mcp",
+    "registryVersion": "0.3.1",
+    "publishedAt": "2026-03-23T11:20:32.158545Z",
+    "displayName": "AgentSIM",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://mcp.agentsim.dev/mcp",
         "transport": "streamable-http",
         "expectAuth": true,
         "remoteName": "default"
@@ -6535,8 +6589,8 @@
   },
   {
     "registryName": "io.github.airweave-ai/search",
-    "registryVersion": "0.9.47",
-    "publishedAt": "2026-03-22T03:26:54.591402Z",
+    "registryVersion": "0.9.51",
+    "publishedAt": "2026-03-24T00:42:42.993303Z",
     "displayName": "Airweave Search",
     "sseOnly": false,
     "remotes": [
@@ -7674,6 +7728,21 @@
     ]
   },
   {
+    "registryName": "io.github.cloudinary/asset-management-mcp",
+    "registryVersion": "0.8.1",
+    "publishedAt": "2026-03-23T22:37:18.143811Z",
+    "displayName": "Cloudinary Asset Management",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://asset-management.mcp.cloudinary.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.coderifts/api-governance",
     "registryVersion": "1.0.0",
     "publishedAt": "2026-03-20T21:01:50.568359Z",
@@ -7785,6 +7854,21 @@
     ]
   },
   {
+    "registryName": "io.github.cthulhutoo/agentry",
+    "registryVersion": "0.4.0",
+    "publishedAt": "2026-03-24T04:13:36.240548Z",
+    "displayName": "Agentry",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.agentry.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.CueCrux/vaultcrux-memory-core",
     "registryVersion": "0.1.3",
     "publishedAt": "2026-03-20T18:25:27.642268Z",
@@ -7795,6 +7879,66 @@
         "url": "https://api.vaultcrux.com/memory-core/mcp",
         "transport": "streamable-http",
         "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
+    "registryVersion": "1.9.3",
+    "publishedAt": "2026-03-23T17:54:23.047968Z",
+    "displayName": "ClinicalTrials.gov v2 API",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://clinicaltrials.caseyjhand.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.cyanheads/hn-mcp-server",
+    "registryVersion": "0.1.5",
+    "publishedAt": "2026-03-23T17:41:22.98359Z",
+    "displayName": "Hacker News — feeds",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://hn.caseyjhand.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.cyanheads/pubchem-mcp-server",
+    "registryVersion": "0.1.8",
+    "publishedAt": "2026-03-23T17:09:24.456354Z",
+    "displayName": "PubChem",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://pubchem.caseyjhand.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.cyanheads/pubmed-mcp-server",
+    "registryVersion": "2.2.1",
+    "publishedAt": "2026-03-23T20:38:50.748488Z",
+    "displayName": "Pubmed",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://pubmed.caseyjhand.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
         "remoteName": "default"
       }
     ]
@@ -7816,9 +7960,9 @@
   },
   {
     "registryName": "io.github.Damien829/aipaygen",
-    "registryVersion": "1.7.1",
-    "publishedAt": "2026-03-10T23:32:51.415734Z",
-    "displayName": "AiPayGen — 148 AI Tools for Agents",
+    "registryVersion": "1.9.4",
+    "publishedAt": "2026-03-24T03:51:50.679497Z",
+    "displayName": "AiPayGen — 250 AI tools for Agents",
     "sseOnly": false,
     "remotes": [
       {
@@ -8596,8 +8740,8 @@
   },
   {
     "registryName": "io.github.gosodax/builders-mcp",
-    "registryVersion": "1.0.2",
-    "publishedAt": "2026-02-24T09:00:38.73546Z",
+    "registryVersion": "1.1.0",
+    "publishedAt": "2026-03-23T13:39:00.234941Z",
     "displayName": "SODAX Builders MCP",
     "sseOnly": false,
     "remotes": [
@@ -8695,6 +8839,21 @@
         "url": "https://api.stg.subotiz.com/mcp/ping",
         "transport": "streamable-http",
         "expectAuth": true,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.HariharRengan/lock-in-study-planner",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T15:11:05.214619Z",
+    "displayName": "Lock In Study Planner",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://lockinplanner.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
         "remoteName": "default"
       }
     ]
@@ -9922,8 +10081,8 @@
   },
   {
     "registryName": "io.github.laibniz/scholarfetch",
-    "registryVersion": "0.2.0",
-    "publishedAt": "2026-03-21T23:48:36.726569Z",
+    "registryVersion": "0.2.1",
+    "publishedAt": "2026-03-23T17:49:32.952677Z",
     "displayName": "ScholarFetch",
     "sseOnly": false,
     "remotes": [
@@ -10582,13 +10741,13 @@
   },
   {
     "registryName": "io.github.mctx-ai/bible-study",
-    "registryVersion": "1.11.0",
-    "publishedAt": "2026-03-20T19:04:47.227564Z",
+    "registryVersion": "1.11.1",
+    "publishedAt": "2026-03-23T22:26:21.235556Z",
     "displayName": "Bible Study",
     "sseOnly": true,
     "remotes": [
       {
-        "url": "https://bible-study.mctx.ai/v1.11.0",
+        "url": "https://bible-study.mctx.ai/v1.11.1",
         "transport": "sse",
         "expectAuth": false,
         "remoteName": "default"
@@ -10597,13 +10756,13 @@
   },
   {
     "registryName": "io.github.mctx-ai/help",
-    "registryVersion": "1.0.28",
-    "publishedAt": "2026-03-20T21:58:44.87245Z",
+    "registryVersion": "1.0.33",
+    "publishedAt": "2026-03-24T04:02:21.45413Z",
     "displayName": "Help",
     "sseOnly": true,
     "remotes": [
       {
-        "url": "https://help.mctx.ai/v1.0.28",
+        "url": "https://help.mctx.ai/v1.0.33",
         "transport": "sse",
         "expectAuth": false,
         "remoteName": "default"
@@ -10612,13 +10771,13 @@
   },
   {
     "registryName": "io.github.mctx-ai/notes",
-    "registryVersion": "1.4.4",
-    "publishedAt": "2026-03-19T16:00:25.665814Z",
+    "registryVersion": "1.4.5",
+    "publishedAt": "2026-03-23T22:18:21.304697Z",
     "displayName": "Notes",
     "sseOnly": true,
     "remotes": [
       {
-        "url": "https://notes.mctx.ai/v1.4.4",
+        "url": "https://notes.mctx.ai/v1.4.5",
         "transport": "sse",
         "expectAuth": false,
         "remoteName": "default"
@@ -10642,13 +10801,13 @@
   },
   {
     "registryName": "io.github.mctx-ai/todos",
-    "registryVersion": "2.0.4",
-    "publishedAt": "2026-03-20T19:12:39.704919Z",
+    "registryVersion": "2.0.5",
+    "publishedAt": "2026-03-23T22:12:20.131762Z",
     "displayName": "Todos",
     "sseOnly": true,
     "remotes": [
       {
-        "url": "https://todos.mctx.ai/v2.0.4",
+        "url": "https://todos.mctx.ai/v2.0.5",
         "transport": "sse",
         "expectAuth": false,
         "remoteName": "default"
@@ -11032,8 +11191,8 @@
   },
   {
     "registryName": "io.github.n24q02m/better-notion-mcp",
-    "registryVersion": "2.19.2",
-    "publishedAt": "2026-03-20T11:47:59.9438Z",
+    "registryVersion": "2.20.0",
+    "publishedAt": "2026-03-24T01:48:59.939407Z",
     "displayName": "Better Notion",
     "sseOnly": false,
     "remotes": [
@@ -11234,6 +11393,21 @@
     "remotes": [
       {
         "url": "https://x402.fiasignals.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.omiiyamu/hiveclaw",
+    "registryVersion": "0.1.1",
+    "publishedAt": "2026-03-24T04:53:13.086074Z",
+    "displayName": "Hiveclaw",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://api.hiveclaw.ai/api/v1/mcp/remote",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -11487,6 +11661,21 @@
     ]
   },
   {
+    "registryName": "io.github.peter120525-cmd/lawmadi-os",
+    "registryVersion": "60.0.1",
+    "publishedAt": "2026-03-24T05:04:38.623411Z",
+    "displayName": "법마디(Lawmadi) OS — Korean Legal AI",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://lawmadi.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.philmccarty/amazon-advertising-ppc-prophet",
     "registryVersion": "1.0.2",
     "publishedAt": "2026-02-04T12:19:36.107902Z",
@@ -11668,8 +11857,8 @@
   },
   {
     "registryName": "io.github.pouria3/bstorms",
-    "registryVersion": "1.0.8",
-    "publishedAt": "2026-03-19T17:27:40.916464Z",
+    "registryVersion": "3.0.0",
+    "publishedAt": "2026-03-24T03:51:35.089971Z",
     "displayName": "bstorms.ai — Agent Playbook Marketplace",
     "sseOnly": false,
     "remotes": [
@@ -12027,6 +12216,21 @@
     ]
   },
   {
+    "registryName": "io.github.roomza-inc/roomza",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-03-24T05:13:08.132584Z",
+    "displayName": "Roomza Hotel Intelligence",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://www.roomza.com/api/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
     "registryName": "io.github.rplryan/x402-discovery-mcp",
     "registryVersion": "1.2.3",
     "publishedAt": "2026-03-09T19:12:34.395165Z",
@@ -12051,1206 +12255,6 @@
       {
         "url": "https://www.2oapi.xyz/api/mcp",
         "transport": "sse",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/academic-commercialization-pipeline-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:34.202138Z",
-    "displayName": "Academic Commercialization Pipeline",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--academic-commercialization-pipeline-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/academic-institution-talent-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:34.692835Z",
-    "displayName": "Academic Institution Talent",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--academic-institution-talent-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/adversarial-corporate-opacity-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:35.189811Z",
-    "displayName": "Adversarial Corporate Opacity",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--adversarial-corporate-opacity-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/adversarial-geopolitical-equilibrium-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:35.658321Z",
-    "displayName": "Adversarial Geopolitical Equilibrium",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--adversarial-geopolitical-equilibrium-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/adversarial-regulatory-arbitrage-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:36.139318Z",
-    "displayName": "Adversarial Regulatory Arbitrage",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--adversarial-regulatory-arbitrage-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/agricultural-commodity-climate-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:36.593535Z",
-    "displayName": "Agricultural Commodity Climate",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--agricultural-commodity-climate-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/ai-model-governance-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:37.078774Z",
-    "displayName": "AI Model Governance",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--ai-model-governance-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/ai-training-data-quality-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:37.629561Z",
-    "displayName": "AI Training Data Quality",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--ai-training-data-quality-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/autonomous-cyber-red-team-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:38.110219Z",
-    "displayName": "Autonomous Cyber Red Team",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--autonomous-cyber-red-team-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/aviation-safety-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:38.575838Z",
-    "displayName": "Aviation Safety Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--aviation-safety-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/brand-narrative-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:39.159607Z",
-    "displayName": "Brand Narrative Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--brand-narrative-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/cannabis-regulatory-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:39.612838Z",
-    "displayName": "Cannabis Regulatory Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--cannabis-regulatory-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/climate-economic-nexus-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:40.06188Z",
-    "displayName": "Climate Economic Nexus",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--climate-economic-nexus-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/cognitive-warfare-psyops-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:40.533699Z",
-    "displayName": "Cognitive Warfare & PsyOps Analysis",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--cognitive-warfare-psyops-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/commonwealth-corporate-registry-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:41.01604Z",
-    "displayName": "Commonwealth Corporate Registry",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--commonwealth-corporate-registry-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/competitive-digital-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:41.482314Z",
-    "displayName": "Competitive Digital Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--competitive-digital-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/construction-project-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:41.928428Z",
-    "displayName": "Construction Project Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--construction-project-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/corporate-deep-research-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:42.373621Z",
-    "displayName": "Corporate Deep Research",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--corporate-deep-research-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/corporate-political-exposure-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:42.826962Z",
-    "displayName": "Corporate Political Exposure",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--corporate-political-exposure-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/counterparty-due-diligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:43.279077Z",
-    "displayName": "Counterparty Due Diligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--counterparty-due-diligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/critical-minerals-dependency-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:43.751205Z",
-    "displayName": "Critical Minerals Dependency",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--critical-minerals-dependency-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/crypto-compliance-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:44.204588Z",
-    "displayName": "Crypto Compliance Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--crypto-compliance-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/cybersecurity-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:44.697566Z",
-    "displayName": "Cybersecurity Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--cybersecurity-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/data-center-siting-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:45.158456Z",
-    "displayName": "Data Center Siting Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--data-center-siting-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/digital-infrastructure-exposure-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:45.637134Z",
-    "displayName": "Digital Infrastructure Exposure",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--digital-infrastructure-exposure-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/drone-uas-regulatory-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:46.090416Z",
-    "displayName": "Drone UAS Regulatory Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--drone-uas-regulatory-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/elder-care-facility-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:46.535724Z",
-    "displayName": "Elder Care Facility Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--elder-care-facility-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/energy-transition-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:46.980827Z",
-    "displayName": "Energy Transition Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--energy-transition-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/energy-transition-resilience-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:47.434546Z",
-    "displayName": "Energy Transition Resilience",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--energy-transition-resilience-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/entity-attack-surface-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:47.896036Z",
-    "displayName": "Entity Attack Surface",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--entity-attack-surface-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/esg-supply-chain-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:48.355159Z",
-    "displayName": "ESG Supply Chain Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--esg-supply-chain-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/export-control-screening-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:48.862034Z",
-    "displayName": "Export Control Screening",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--export-control-screening-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/financial-crime-screening-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:49.305826Z",
-    "displayName": "Financial Crime Screening",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--financial-crime-screening-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/food-safety-supply-chain-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:49.744338Z",
-    "displayName": "Food Safety Supply Chain",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--food-safety-supply-chain-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/franchise-due-diligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:50.201668Z",
-    "displayName": "Franchise Due Diligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--franchise-due-diligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/government-contract-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:50.634529Z",
-    "displayName": "Government Contract Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--government-contract-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/healthcare-credentialing-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:51.09487Z",
-    "displayName": "Healthcare Credentialing Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--healthcare-credentialing-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/higher-education-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:51.529538Z",
-    "displayName": "Higher Education Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--higher-education-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/influencer-brand-safety-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:51.978591Z",
-    "displayName": "Influencer Brand Safety Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--influencer-brand-safety-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/infrastructure-location-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:52.423153Z",
-    "displayName": "Infrastructure Location Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--infrastructure-location-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/insurance-underwriting-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:52.877744Z",
-    "displayName": "Insurance Underwriting Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--insurance-underwriting-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/investment-alternative-data-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:53.519585Z",
-    "displayName": "Investment Alternative Data",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--investment-alternative-data-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/ip-patent-trademark-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:53.990435Z",
-    "displayName": "IP, Patent & Trademark Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--ip-patent-trademark-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/knowledge-graph-causal-discovery-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:54.457408Z",
-    "displayName": "Knowledge Graph & Causal Discovery",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--knowledge-graph-causal-discovery-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/law-enforcement-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:54.912225Z",
-    "displayName": "Law Enforcement Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--law-enforcement-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/litigation-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:55.373377Z",
-    "displayName": "Litigation Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--litigation-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/logistics-freight-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:55.822649Z",
-    "displayName": "Logistics Freight Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--logistics-freight-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/m-and-a-target-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:56.275256Z",
-    "displayName": "M&A Target Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--m-and-a-target-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/maritime-resource-compliance-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:56.787582Z",
-    "displayName": "Maritime Resource Compliance",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--maritime-resource-compliance-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/maritime-shipping-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:57.253986Z",
-    "displayName": "Maritime Shipping Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--maritime-shipping-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/market-microstructure-manipulation-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:57.695491Z",
-    "displayName": "Market Microstructure Manipulation",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--market-microstructure-manipulation-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/municipal-fiscal-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:58.144426Z",
-    "displayName": "Municipal Fiscal Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--municipal-fiscal-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/nonprofit-grant-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:58.594709Z",
-    "displayName": "Nonprofit Grant Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--nonprofit-grant-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/nuclear-regulatory-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:59.038867Z",
-    "displayName": "Nuclear Regulatory Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--nuclear-regulatory-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/open-source-software-supply-chain-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:59.507972Z",
-    "displayName": "Open Source Software Supply Chain",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--open-source-software-supply-chain-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/open-source-supply-chain-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:56:59.949642Z",
-    "displayName": "Open Source Supply Chain Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--open-source-supply-chain-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/pandemic-biosurveillance-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:00.416003Z",
-    "displayName": "Pandemic Biosurveillance",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--pandemic-biosurveillance-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/pandemic-supply-chain-cascade-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:00.861891Z",
-    "displayName": "Pandemic Supply Chain Cascade",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--pandemic-supply-chain-cascade-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/pharma-pipeline-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:01.316827Z",
-    "displayName": "Pharma Pipeline Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--pharma-pipeline-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/political-influence-network-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:01.778768Z",
-    "displayName": "Political Influence Network",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--political-influence-network-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/product-safety-consumer-risk-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:02.235666Z",
-    "displayName": "Product Safety Consumer Risk",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--product-safety-consumer-risk-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/regulatory-arbitrage-detection-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:02.683471Z",
-    "displayName": "Regulatory Arbitrage Detection",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--regulatory-arbitrage-detection-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/regulatory-change-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:03.133839Z",
-    "displayName": "Regulatory Change Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--regulatory-change-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/research-integrity-screening-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:03.574275Z",
-    "displayName": "Research Integrity Screening",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--research-integrity-screening-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/sanctions-evasion-network-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:04.011959Z",
-    "displayName": "Sanctions Evasion Network",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--sanctions-evasion-network-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/scientific-fraud-detection-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:04.450821Z",
-    "displayName": "Scientific Fraud Detection",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--scientific-fraud-detection-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/sovereign-debt-contagion-geopolitical-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:04.894455Z",
-    "displayName": "Sovereign Debt Contagion Geopolitical",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--sovereign-debt-contagion-geopolitical-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/sovereign-debt-contagion-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:05.342593Z",
-    "displayName": "Sovereign Debt Contagion",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--sovereign-debt-contagion-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/sovereign-debt-crisis-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:05.786089Z",
-    "displayName": "Sovereign Debt Crisis",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--sovereign-debt-crisis-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/space-industry-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:06.222265Z",
-    "displayName": "Space Industry Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--space-industry-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/startup-ecosystem-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:06.66722Z",
-    "displayName": "Startup Ecosystem Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--startup-ecosystem-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/supply-chain-digital-twin-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:08.167263Z",
-    "displayName": "Supply Chain Digital Twin",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--supply-chain-digital-twin-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/systemic-risk-contagion-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:08.596258Z",
-    "displayName": "Systemic Risk Contagion",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--systemic-risk-contagion-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/tech-ecosystem-analysis-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:09.044394Z",
-    "displayName": "Tech Ecosystem Analysis",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--tech-ecosystem-analysis-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/trade-based-money-laundering-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:09.503417Z",
-    "displayName": "Trade-Based Money Laundering Detection",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--trade-based-money-laundering-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/travel-risk-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:09.944261Z",
-    "displayName": "Travel Risk Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--travel-risk-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/uk-business-compliance-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:10.382738Z",
-    "displayName": "UK Business Compliance",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--uk-business-compliance-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/uk-regulatory-ecosystem-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:10.838536Z",
-    "displayName": "UK Regulatory Ecosystem",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--uk-regulatory-ecosystem-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/water-utility-risk-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:11.283169Z",
-    "displayName": "Water Utility Risk Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--water-utility-risk-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
-        "expectAuth": false,
-        "remoteName": "default"
-      }
-    ]
-  },
-  {
-    "registryName": "io.github.Ryan-Clinton/workforce-competitive-intelligence-mcp",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-07T01:57:11.734687Z",
-    "displayName": "Workforce Competitive Intelligence",
-    "sseOnly": false,
-    "remotes": [
-      {
-        "url": "https://ryanclinton--workforce-competitive-intelligence-mcp.apify.actor/mcp",
-        "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
       }
@@ -13490,6 +12494,21 @@
     "remotes": [
       {
         "url": "https://sendit.infiniteappsai.com/mcp",
+        "transport": "streamable-http",
+        "expectAuth": false,
+        "remoteName": "default"
+      }
+    ]
+  },
+  {
+    "registryName": "io.github.sigaihealth/cancer-support-hub",
+    "registryVersion": "1.0.0",
+    "publishedAt": "2026-03-23T08:54:09.341288Z",
+    "displayName": "Cancer Support Hub",
+    "sseOnly": false,
+    "remotes": [
+      {
+        "url": "https://cancersupport.sig.ai/api/mcp",
         "transport": "streamable-http",
         "expectAuth": false,
         "remoteName": "default"
@@ -14794,8 +13813,8 @@
   },
   {
     "registryName": "io.github.wyattbenno777/icme-preflight",
-    "registryVersion": "1.0.0",
-    "publishedAt": "2026-03-21T15:58:30.068656Z",
+    "registryVersion": "1.0.1",
+    "publishedAt": "2026-03-23T16:55:58.85125Z",
     "displayName": "Icme Preflight",
     "sseOnly": false,
     "remotes": [
@@ -15052,8 +14071,8 @@
   },
   {
     "registryName": "io.kolmo.www/kolmo-mcp-server",
-    "registryVersion": "1.0.1",
-    "publishedAt": "2026-03-23T07:20:15.455066Z",
+    "registryVersion": "1.0.2",
+    "publishedAt": "2026-03-23T07:40:05.754655Z",
     "displayName": "Kolmo",
     "sseOnly": false,
     "remotes": [
@@ -15112,8 +14131,8 @@
   },
   {
     "registryName": "io.nestr/mcp",
-    "registryVersion": "0.1.49",
-    "publishedAt": "2026-03-23T04:31:35.547557Z",
+    "registryVersion": "0.1.50",
+    "publishedAt": "2026-03-23T22:35:42.624371Z",
     "displayName": "Nestr",
     "sseOnly": false,
     "remotes": [
@@ -16153,8 +15172,8 @@
   },
   {
     "registryName": "so.pharaoh/pharaoh",
-    "registryVersion": "1.0.7",
-    "publishedAt": "2026-03-22T14:18:27.979404Z",
+    "registryVersion": "1.0.8",
+    "publishedAt": "2026-03-23T14:48:42.309709Z",
     "displayName": "Pharaoh",
     "sseOnly": true,
     "remotes": [
